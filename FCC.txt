@@ -1,0 +1,2128 @@
+F55(BL) + 38(ML) + 7(Words)
+HTML -> Table, Canvas, Flex, 
+JavaScript -> Syntax, DOM, oop, await, async, libs, node
+jQuery, Bootstrap --> Study about Examples,
+React --> Review
+
+learn.freecodecamp.org
+________________________________________________________________________________
+
+Responsive Web Design Certification (300 hours)
+_______________________________________
+
+Course 1: Introduction to Basic HTML & HTML5
+
+<!DOCTYPE html> - Define HTML5 document
+<html> <head></head> <body></body> </html> - HTML head and body
+<head> <title></title> <link>...<meta>...<style>... </head> - HTML head contents
+<h1></h1>...<h6></h6> - Headline 1..6
+<p></p> - Specify paragraph element
+lorem ipsum - This is a text place holder in HTML
+<!-- --> - Comments in HTML
+<main></main> - Main helps search engines & others find the main content of page
+<header></header> <footer></footer> <nav role="navigation"></nav> <video></video>
+<article></article> <section></section>
+<img src="location" alt="Text"> - Image tage in HTML
+<a href="address">Text</a> - Hyper Link Anchor
+<a href="#x1">Contacts</a><h2 id="x1">Contacts</h2> - Reference inside page
+"target" Attribute values in <a> can be _blank _self _parent _top framename
+<ul><li></li><li></li></ul> - Creates unordered lists
+<ol><li></li><li></li></ol> - Creates ordered lists
+<input type="text"> - Text input element
+<input type="text" placeholder="text"> - Adds placeholder to text input
+<form action="/submit-form-data"></form> - Create form element to submit data
+<button type="submit">submit</button> - Submit button
+<input type="text" required> - Specify a required text field
+<label for="indoor"> - Radio group:
+  <input id="indoor" type="radio" name="something">Indoor</label>
+<label for="loving"> - Checkboxes
+  <input id="loving" type="checkbox" name="personality"> Loving</label>
+<input type="radio" name="test-name" checked> - Checked by default
+<div></div> - Divider
+<pre>text</pre> - Defines pre-formated text 
+<mark>text</mark> - Highlight text
+<strong></string> <b></b> - Strong defines important text but b is just bold
+<em></em> <i></i> - em Defines emphasised text but i is simply italic
+<abbr title="Hypertext Markup Language">HTML</abbr>
+<ins>text</ins> - Present text with underline that means the text is inserted
+<del>text</del> - Present text with stricke through line that means text removed
+<s>text</s> - Stricke through text
+<sup>superscript</sup> - Superscript
+<sub>subscript</sub> - Subscript
+<a href="https://address.com" target="_blank|_top|_self|_parent|framename" hreflang="en-us" rel="prev|next|..." ></a>
+<a href="page1.html#Topic1">look back in the First Topic</a>
+<a href="tel:11234567890">Call us</a>
+use rel="noopener noreferrer" with anchor to prevent using window.opener object via JavaScript in new page
+<a href="javascript:myFunction();">Run Code</a>
+  You can also achieve the same thing using the onclick attribute:
+  <a href="#" onclick="myFunction(); return false;">Run Code</a>
+  <a href="#!" onclick="myFunction();">Run Code</a>
+<a href="mailto:example@example.com?subject=Example+subject&body=Message+text">Send email</a>
+<ol start="5" reversed type="1|a|A|i|I">
+	<li>Item</li>
+	<li value="4">A Reset Item</li>
+</ol>
+	Type Description:
+		1 Default value - Decimal numbers Examples 1,2,3,4
+		a Alphabetically ordered (lowercase) a,b,c,d
+		A Alphabetically ordered (uppercase) A,B,C,D
+		i Roman Numerals (lowercase) i,ii,iii,iv
+		I Roman Numerals (uppercase) I,II,III,IV
+Description list is name-value groups, where the name is given in the dt element, and the value is given in the dd element.
+<dl>
+	<dt>name 1</dt>       <-- name
+	<dd>value for 1</dd>  <-- description
+	<dt>name 2</dt><dd>value for 2</dd>
+</dl>
+Table cells can span multiple columns or rows using the colspan and rowspan attributes. These attributes can be applied to <th> and <td> elements.
+<thead>, <tbody>, <tfoot> rowspan="0" <-- Spread row to table width
+The optional <colgroup> tag allows you to group columns together. <colgroup> elements must be child elements of a <table> and must come after any <caption> elements and before any table content (e.g., <tr> , <thead> , <tbody> , etc.).
+<table>
+	<colgroup>
+		<col id="MySpecialColumn" />
+		<col />
+	</colgroup> ...
+
+Oldstyle data in HTML tags:
+<img src="sample.jpg" value="test" />
+You can use data filed in js code with setArrtibute and getAttribute
+
+Data Attribute: Data attribute structure is data-* , i.e. the name of the data attribute comes after the data- part. Using this
+name, the attribute can be accessed:
+<div data-submitted="yes">Data Goes Here</div>
+
+<script src="path/to.js" async></script>  // Speedup loading HTML in parallel
+<script src="path/to.js" defer></script>  // same as async but load after HTML fully parsed
+<noscript>JavaScript disabled</noscript>  // Show when js is disabled or not supported
+
+// Use the mime-type image/png for PNG files and image/x-icon for icon ( *.ico ) files.
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+<link rel="stylesheet" href="test.css" media="print">
+Media specifies what style sheet should be used for what type of media. Using the print value would only display that style sheet for print pages. The value of this attribute can be any of the mediatype values (similar to a CSS media query).
+
+// Using prev and next in articles with several sequential pages
+<link rel="prev" href="http://stackoverflow.com/documentation/java/topics">
+<link rel="next" href="http://stackoverflow.com/documentation/css/topics">
+
+// Allow discoverability of rss/atom feeds:
+<link rel="alternate" type="application/atom+xml" href="http://example.com/feed.xml" />
+<link rel="alternate" type="application/rss+xml" href="http://example.com/feed.xml" />
+https://developer.mozilla.org/en-US/docs/Web/RSS/Module/Atom
+
+- CDN = Content Delivery Network
+<link rel="stylesheet" type="text/css" href="cdn-address" integrity="..." crossorigin="anonymous">  // External CSS
+<style type="text/css"></style>
+- Embed image directly inside HTML page - img is normally link not embed
+<img src="data:image/png;base64,iVBOR..." alt="Hello World">
+
+<img sizes="(min-width: 1200px) 580px,
+(min-width: 640px) 48vw,
+98vw"
+srcset="img/hello-300.jpg 300w,
+img/hello-600.jpg 600w,
+img/hello-900.jpg 900w,
+img/hello-1200.jpg 1200w"
+src="img/hello-900.jpg" alt="hello">
+
+<img src="img/hello-300.jpg" alt="hello"
+srcset="img/hello-300.jpg 1x,  // f device-pixel ratio is 1, use img/hello-300.jpg
+img/hello-600.jpg 2x,
+img/hello-1200.jpg 3x">
+
+<picture>
+  <source media="(min-width: 600px)" srcset="large_image.jpg">
+  <source media="(min-width: 450px)" srcset="small_image.jpg">
+  <img src="default_image.jpg" style="width:auto;">
+</picture>
+
+<img src="http://jaced.com/blogpix/2007/trisquarecircle/002.gif" usemap="#shapes">
+<map name="shapes">
+	<area shape="polygon" coords="79,6,5,134,153,134">
+	<area shape="rectangle" coords="177,6,306,134">
+	<area shape="circle" coords="397,71,65">
+</map>
+
+<input type="x" id="inputName" class="..." disabled="true" checked
+  multiple(email & files) placeholder autocomplete readonly="false" required
+  alt="alt-text" autofocus value=""
+  step=""  // specifies the legal number intervals. It works with the following    
+              types: number, range, date, datetime-local, month, time and week.
+/>
+Acceptable values for type are hidden, text, tel, url, email,
+password, date, time, number, range, color, checkbox, radio, file, submit, image, reset, and button.
+
+<fieldset>
+	<legend>Theme color:</legend>
+	<p>
+		<input type="radio" name="color" id="red" value="#F00">
+		<label for="red">Red</label>
+	</p>
+	<p>
+		<input type="radio" name="color" id="green" value="#0F0">
+		<label for="green">Green</label>
+	</p>
+	<p>
+		<input type="radio" name="color" id="blue" value="#00F">
+		<label for="blue">Blue</label>
+	</p>
+</fieldset>
+
+<input minlength="3" maxlength="15">
+<input type="number" size="6" name="marks" min="0" max="100" />  // Number
+<input type="range" size="2" name="feedback" min="1" max="5" />  // range
+<input pattern="\d*" title="Numbers only, please.">  // using regex
+<input type="submit" value="Save" formnovalidate> <!-- form will NOT be validated -->
+<input type="search" name="googlesearch">
+<input type="month" />
+<input type="time" />
+<fieldset>
+	<p><label>Meeting time: <input type=datetime name="meeting.start"></label>
+</fieldset>
+<select multiple>  <option value="" selected>Text</option>  </select>
+<embed src="file.wave" hidden="true" autostart="false" />
+<a href="javascript:alert('Hello');" >Link</a>
+<form accept-charset="UTF-8" action="target.html" autocomplete enctype="off" 
+      method="POST/GET" name="formName" novalidate target="_blank" ></form>
+<form method="post" enctype="multipart/form-data" action="upload.php">
+	<input type="file" name="pic" />
+	<input type="submit" value="Upload" />
+</form>
+#videobg {
+background: url(video.jpg) no-repeat;
+background-size: cover;
+}
+For browsers that do not support the progress element, you can use this as a workaround.
+<progress max="100" value="20">
+  <div class="progress-bar">
+    <span style="width: 20%;">Progress: 20%</span>
+  </div>
+</progress>
+
+<input list="Languages">
+<datalist id="Languages">
+	<option value="PHP">
+	<option value="Perl">
+	<option value="Python">
+	<option value="Ruby">
+	<option value="C++">
+</datalist>
+
+To allow the page to run scripts and submit forms, add allow-scripts and allow-forms to the sandbox attribute .
+<iframe sandbox="allow-scripts allow-forms" src="http://example.com/"></iframe>
+<iframe sandbox src="http://example.com/"></iframe>
+<iframe srcdoc="<p>Iframes are cool!</p>" src="base.html"></iframe>
+<iframe src="webpage.html" name="myIframe"></iframe>
+<a href="different_webpage.html" target="myIframe">Change the Iframe content to
+different_webpage.html</a>
+
+<select name="">
+<option value="milk">Milk</option>
+<optgroup label="Fruits">
+  <option value="banana">Bananas</option>
+  <option value="strawberry">Strawberries</option>
+</optgroup>
+<optgroup label="Vegetables" disabled>
+  <option value="carrot">Carrots</option>
+  <option value="zucchini">Zucchini</option>
+</optgroup>
+</select>
+
+<embed type="video/mp4" src="video.mp4" width="640" height="480">
+<embed src="myflash.swf">
+
+<p lang="en">This English sentence contains the German word <span lang="de">Hallo</span>.</p>
+<a href="example.org" hreflang="en">example.org</a>
+
+Using the image element
+<img src="attention.svg" width="50" height="50">
+Using <img> does not allow you to style the SVG using CSS or manipulate it using JavaScript.
+Using the object element
+<object type="image/svg+xml" data="attention.svg" width="50" height="50"
+
+var ctx = document.getElementById("myCanvas").getContext("2d");
+// now we can refer to the canvas's 2D layer context using `ctx`
+ctx.fillStyle = "#f00";
+ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height); // x, y, width, height
+ctx.fillStyle = "#000";
+ctx.fillText("My red canvas with some black text", 24, 32); // text, x, y
+
+// Common mobile-optimized sites use the <meta name="viewport"> tag like this:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+//To refresh the page every five seconds, add this meta element in the head element:
+<meta http-equiv="refresh" content="5">
+
+// to redirect to example.com after 5 seconds:
+<meta http-equiv="refresh" content="5;url=https://www.example.com/" />
+
+// Turnoff phone number auto-detection on safari and iphone
+<meta name="format-detection" content="telephone=no">
+
+<p>She wrote <q cite="http://example.com/blog/hello-world">The answer is 42.</q> and everyone agreed.</p>
+
+<p contenteditable>This is an editable paragraph.</p>
+
+<html manifest="index.appcache">
+index.appcache:
+  CACHE MANIFEST
+  index.html
+
+Events:
+onblur 		Fires the moment that the element loses focus
+onchange	Fires the moment when the value of the element is changed
+oncontextmenu Script to be run when a context menu is triggered
+onfocus		Fires the moment when the element gets focus
+oninput		Script to be run when an element gets user input
+oninvalid	Script to be run when an element is invalid
+onreset		Fires when the Reset button in a form is clicked
+onsearch	Fires when the user writes something in a search field (for <input="search">)
+onselect	Fires after some text has been selected in an element
+onsubmit	Fires when a form is submitted
+onkeydown	Fires when a user is pressing a key
+onkeypress	Fires when a user presses a key
+onkeyup		Fires when a user releases a key
+_______________________________________
+
+SEO:
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="author" content="ArdeshirV">
+  <meta name="description" content="ArdeshirV Portfilio that test HTML5, CSS, JS6+, jQuery, Bootstrap and React">
+  <meta name="keywords" content="ArdeshirV, portfolio, profile, programmer, developer, projects">
+  <meta name="robots" content="all">
+
+  <!-- Facebook: https://developers.facebook.com/docs/sharing/webmasters#markup - Open Graph: http://ogp.me/ -->
+  <meta property="fb:app_id" content="123456789">
+  <meta property="og:url" content="https://example.com/page.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Content Title">
+  <meta property="og:image" content="https://example.com/image.jpg">
+  <meta property="og:description" content="Description Here">
+  <meta property="og:site_name" content="Site Name">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@site_account">
+  <meta name="twitter:creator" content="@individual_account">
+  <meta name="twitter:url" content="https://example.com/page.html">
+  <meta name="twitter:title" content="Content Title">
+  <meta name="twitter:description" content="Content description less than 200 characters">
+  <meta name="twitter:image" content="https://example.com/image.jpg">
+
+  <!-- Google+ / Schema.org -->
+  <link href="https://plus.google.com/+YourPage" rel="publisher">
+  <meta itemprop="name" content="Content Title">
+  <meta itemprop="description" content="Content description less than 200 characters">
+  <meta itemprop="image" content="https://example.com/image.jpg">
+  
+_______________________________________
+
+Course 2: Introduction to Basic CSS
+
+<h2 style="color: blue;">CatPhotoApp</h2> - inline style example
+<style>h2 {color: red;}</style> - effective on all h2 elements
+<h2 class="blue-text">CatPhotoApp</h2> - Apply a style class to HTML element
+<style> .blue-text { color: blue; } </style> - Define a style class
+h1 { font-size: 30px; } - Change font in CSS
+h2 { font-family: sans-serif; } - Set font family
+<link href="https://fonts.googleapis.com/css?family=Lobster"
+    rel="stylesheet" type="text/css"> - Using google fonts
+p { font-family: Helvetica, sans-serif; } - Degrade font
+Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
+<style> .larger-image { width: 500px; } </style> - Set width in CSS
+<style> .thin-red-border { border-color: red; border-width: 5px;
+    border-style: solid; border-radius: 10px; } </style> - Border style in CSS
+<img class="class1 class2"> - Apply several style class to an element
+.circular-border { border-radius: 50%; } - Set circular border around element
+.green-background { background-color: green; } - Set background color
+#cat-photo-element { background-color: green; } - Apply style to id of element
+Three important properties control the space that surrounds each HTML element: padding, margin, and border.
+An element's padding controls the amount of space between the element's content and its border.
+An element's margin controls the amount of space between an element's border and surrounding elements.
+If you set an element's margin to a negative value, the element will grow larger.
+padding-top, padding-right, padding-bottom, and padding-left - Paddings
+margin: 10px 20px 10px 20px; - Use Clockwise Notation for margin/padding
+        top  righ bott left
+[type='radio'] { margin: 20px 0px 20px 0px; } - Use attribute selectors
+Relative units, such as em or rem, are relative to another length value. For example, em is based on the size of an element's font. If you use it to set the font-size property itself, it's relative to the parent's font-size.
+the order of the class declarations in the <style> section are what is important. The second declaration will always take precedence over the first.
+color: red !important; - The !important override everything else.
+we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. 
+red's hex code #FF0000 can be shortened to #F00. This shortened form gives one digit for red, one digit for green, and one digit for blue.
+.orange { color: rgb(255, 165, 0); } - Using rgb to specify a color
+--penguin-skin: gray; - Custom CSS variable
+background: var(--penguin-skin); - Using CSS variable
+background: var(--p-skin, black); - Attach a Fallback value to a CSS Variable
+.red-box { color: red; color: var(--red-color); } - Improving capatibility
+You can think of the :root element as a container for your entire HTML document
+@media (max-width: 350px) { :root { --penguin-skin: black; }} - Media Query
+
+section#about:hover { color: blue; }          // Very specific selectors
+div.classname#specified_id { color: green; }  // Another example
+_______________________________________
+
+Course 3: Introduction to the Applied Visual Design Challenges
+
+<strong>some Text</strong> - Bold the text
+font-weight: bold; - Bold the text
+<u>text here</u> or  text-decoration: underline;  - Applies underline
+<em>text here</em> or  font-style: italic;  - Applies italicize
+<s>text</s> or  text-decoration: line-through; - Applies strikethrough
+<hr>Text</hr> - Draw a horizontal line to separate contents
+background-color: rgba(45, 45, 45, 0.1) - Alpha blending
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+font-weight property sets how thick or thin characters are in a section of text.
+line-height: 25px; - Set distance between lines
+tag:hover {} - Applies an appearance to the "tag" element whenever hover occure
+p { position: relative; bottom: 10px; } - Define pos relative to bottom
+#left { float: left; width: 50%; } - Set float position
+z-index property can specify the order of how elements are stacked on top of one another
+margin: auto;  - center a block element horizontally
+Images are inline elements by default, but can be changed to block elements when you set the display property to block.
+display: inline-block; - Specify inline block
+Tertiary Colors: orange: #FF7D00, cyan: #00FFFF, raspberry: #FF007F
+Complementary Colors: teal #09A7A1, orange: #FF790E
+Saturation is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. 
+Lightness is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.
+red		hsl(0, 100%, 50%)
+yellow	hsl(60, 100%, 50%)
+green	hsl(120, 100%, 50%)
+cyan	hsl(180, 100%, 50%)
+blue	hsl(240, 100%, 50%)
+magenta	hsl(300, 100%, 50%)
+Two kind of Cyan: color: hsl(180, 90%, 35%); AND color: hsl(180, 80%, 25%);
+background: linear-gradient(gradient_direction, color 1, ...);
+border-radius: 50px; - Set edges round
+Caution Yellow/Black: background: repeating-linear-gradient(
+45deg, yellow 0px, yellow 40px, black 40px, black 80px);
+background: url("... .png"); - Use a background pattern
+p { transform:scale(2); } - Doubles the size of all the paragraph elements
+p {transform: skewX(-32deg);}-skews the element by -32 degrees along the X-axis
+.heart::before {content:"";} .heart::before{content: "";} - After & before
+transform: rotate(0deg); - Rotate an element
+animation: animation-name, animation-duration, animation-fill-mode, animation-iteration-count, animation-timing-function
+@keframes anim-name { 0% {} ... 100% {} }
+animation-timing-function: ease/ease-in/ease-out/linear
+animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+_______________________________________
+
+Course 4: Applied Accessibility
+
+<audio id="meowClip" controls>
+  <source src="audio/meow.ogg" type="audio/ogg" />
+</audio>
+
+<figure>
+  <img src="roundhouseDestruction.jpeg" alt="Camper Cat"><br>
+  <figcaption>roundhouse kick.</figcaption>
+</figure>
+
+<fieldset>
+	<legend>Choose one of these three items:</legend>
+	<input id="one" type="radio" name="items" value="one">
+	<label for="one">Choice One</label><br>
+	<input id="two" type="radio" name="items" value="two">
+	<label for="two">Choice Two</label><br>
+</fieldset>
+
+<label for="input1">Enter a date:</label>
+<input type="date" id="input1" name="input1">
+
+<time datetime="2016-09-15">Thursday, September 15<sup>th</sup></time>
+
+display: none; or visibility: hidden; hides content for everyone, including screen reader users
+
+Zero values for pixel sizes, such as width: 0px; height: 0px; removes that element from the flow of your document, meaning screen readers will ignore it
+
+.sr-only {  // Hidden for everybody but not screen-reader
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+
+<button accesskey="b">Important Button</button>
+
+<div tabindex="0">I need keyboard focus!</div>
+_______________________________________
+
+Course 5: Introduction to the Responsive Web Design Challenges
+
+@media (max-width: 100px) { /* CSS Rules */ }    // Responsive element
+
+img { // Responsive Image
+    display: block;
+    height: auto;
+    max-width: 100%; }
+
+img { width: 100px; height: 100px; } // Decrease width & height 50% for retina
+
+vw: 10vw would be 10% of the viewport's width.
+vh: 3vh would be 3% of the viewport's height.
+vmin: 70vmin would be 70% of the viewport's smaller dimension(height vs.width).
+vmax: 100vmax would be 100% of the viewport's bigger dimension(height vs.width).
+_______________________________________
+
+Course 6: CSS Flexbox
+
+display: flex;  // Adding flex to the element makes it a flex container
+The default value for the flex-direction property is row.
+flex-direction: row/column/row-reverse/column-reverse;
+justify-content: center/flex-start/flex-end/space-between/space-around;
+align-items: center/flex-start/flex-end/stretch/baseline;
+flex-wrap: nowrap/wrap/wrap-reverse;
+flex-shrink: <number>;
+flex-grow: <number>;
+flex-basis: <size-value(px/em/..)>
+flex: 1 0 10px; will set -> flex-grow: 1;, flex-shrink: 0; and flex-basis: 10px;
+The default property settings are -> flex: 0 1 auto;.
+order: <number>;  // Set the order for flex
+other common adjustment techniques using the CSS properties float, clear, and vertical-align do not work on flex items.
+align-self accepts the same values as align-items and will override any value set by the align-items property.
+align-self: center/flex-start/flex-end/stretch/baseline;
+_______________________________________
+
+Course 7: Introduction to the CSS Grid Challenges
+
+display: grid;  // Turn any HTML element into a grid container
+In CSS Grid, the parent element is referred to as the container and its children are called items.
+.container {
+  display: grid;
+  grid-template-rows: 50px 50px;  // Adds two rows
+  grid-template-columns: 50px 50px;  // Adds two columns
+}
+x: <Numbwe>fr; //sets the x to a fraction of the available space
+grid-column-gap: 10px;
+grid-gap: <num>..; grid-row-gap: <num>px; grid-column-gap: <num>px;  // Add gap
+grid-column: x/y;  // X is begining and y is the end line
+grid-row: x/y;
+justify-self: center/start/end;  // Horizontal - Cell
+align-self: center/start/end;    // Vertical   - Cell
+justify-items: center/start/end; // Horizontal - Grid
+align-items: center/start/end;   // Vertical - Grid
+grid-template-areas:  // in grid container
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (.) to designate an empty cell in the grid.
+grid-area: header;  // Shows how to use grid-template-areas in grid item
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+grid-template-columns: repeat(2, 1fr 50px) 20px;
+Above statement translates to: grid-template-columns: 1fr 50px 1fr 50px 20px;
+grid-template-columns: 100px minmax(50px, 200px);  // Define two column
+repeat(auto-fill, minmax(60px, 1fr));  // auto-fill
+repeat(auto-fit, minmax(60px, 1fr));  // auto-fit
+_____________________________________________________________
+
+Addition to Responsive Web Design:
+
+overflow-x: scroll;  // Adds scrollbar if the contents become bigger than width
+overflow-y: scroll;  // Adds scrollbar if the contents become bigger than Height
+<object></object>    // Adds external object to a page
+<embed></embed>      // Adds external HTML file into current page
+<strong></strong> = <b></b>
+<em></em> = <i></i>
+
+________________________________________________________________________________
+
+GoalKicker.com - CSS Notes for Professionals:
+
+// import from internal style tag
+<style>
+  @import url('/css/styles.css');
+</style>
+
+// import in external stylesheet
+@import 'additional-styles.css';
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+// An optional second argument to @import rule is a list of media queries:
+@import '/print-styles.css' print;
+@import url('landscape.css') screen and (orientation:landscape);
+
+// Modify styles by pure JavaScript
+let el = document.getElementById("element");
+el.style.opacity = 0.5;
+el.style.fontFamily = 'sans-serif';
+
+// Modify styles by jQuery
+$('#element').css('margin', '5px');
+$('#element').css({
+  margin: "5px",
+  padding: "10px",
+  color: "black"
+});
+$('.example-class').css({
+"background-color": "blue",
+fontSize: "10px"
+});
+
+// List style types
+disc, circle, square, decimal, lower-roman, upper-roman, none
+li { list-style-type: square; }
+li { list-style-image: url(images/bullet.png); }
+// The list-style-position property defines where to position the list-item marker, and it accepts one of two values: "inside" or "outside".
+li { list-style-position: inside; }
+
+// Shadow
+span { text-shadow: yellow 0 0 3px, green 4px 4px 10px; }
+
+p, .blue, #first, div span{ color : blue }
+// Applies to p, blue class, element with id first and every span inside of a div
+
+/* CSS comments goes here */
+
+Selector	Description
+*			Universal selector (all elements)
+div			Tag selector (all <div> elements)
+.blue		Class selector (all elements with class blue )
+.blue.red	All elements with class blue and red (a type of Compound selector)
+#headline	ID selector (the element with "id" attribute set to headline )
+:pseudo-class	All elements with pseudo-class
+::pseudo-element	Element that matches pseudo-element
+:lang(en)	Element that matches :lang declaration, for example <span lang="en">
+div > p		child selector
+
+Selector(1)		Matched element		Selects elements...
+[attr]			<div att>			With attribute attr
+[attr='val']	<div attr="val">	Where attribute attr has value val
+[attr~='val']	<div attr="val val2 val3"> Where val appears in the
+									whitespace-separated list of attr 2
+[attr^='val'] 	<div attr="val1 val2"> Where attr 's value begins with val 3
+[attr$='val']	<div attr="sth aval"> Where the attr 's value ends with val 3
+[attr*='val']	<div attr="somevalhere"> Where attr contains val anywhere 3
+[attr|='val']	<div attr="val-sth etc"> Where attr 's value is exactly val ,
+									or starts with val and immediately
+[attr='val' i]	<div attr="val">	Where attr has value val , ignoring val 's letter casing.
+
+Selector	Description
+div span	Descendant selector (all <span> s that are descendants of a <div> )
+div > span	Child selector (all <span> s that are a direct child of a <div> )
+a ~ span	General Sibling selector (all <span> s that are siblings after an <a> )
+a + span	Adjacent Sibling selector (all <span> s that are immediately after an <a> )
+
+.checkRange:not(:in-range) { color: red; }
+<input class="checkRange" type="number" min="0" max="100" value="0" />
+
+/* The following selector matches all <input> elements in an HTML document that are not disabled and don't have the
+class .example */
+input:not([disabled]):not(.example) { background-color: #ccc; }
+input:not([disabled], .example) { background-color: #ccc; }
+
+background: linear-gradient(to left top, red, yellow 10%);
+background: radial-gradient(red, yellow);
+
+background-size: xpx ypx | x% y%;
+background-repeat: no-repeat | repeat | repeat-x | repeat-y;
+background-position: left offset (px/%) right offset (px/%) | center center | left top | right bottom;
+
+/* In CSS3, we can stack multiple background in the same element. */
+#mydiv {
+	background-image: url(img_1.png), url(img_2.png), url(img_3.png);
+	background-position: right bottom, left top, right top;
+	background-repeat: no-repeat, repeat, no-repeat;
+}
+
+/* We can also use background shorthand property for this: */
+#mydiv {
+	background: url(img_1.png) right bottom no-repeat,
+	url(img_2.png) left top repeat,
+	url(img_3.png) right top no-repeat;
+}
+
+/* We can also stack images and gradients: */
+#mydiv {
+	background: url(image.png) right bottom no-repeat,
+	linear-gradient(to bottom, #fff 0%, #000 100%);
+}
+
+/* ... */
+background-attachment: scroll|fixed|local|initial|inherit;
+background-origin: border-box|padding-box|content-box|inherit;
+background-repeat: repeat-x|repeat-y|...;
+background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge |
+saturation | color | luminosity;
+background-color: RGBA(0, 0, 0, 0.6);  // Background color opacity
+
+-Centering by flex:
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+
+- Centering by CSS:
+.container {
+  position: relative;
+}
+.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera, Android */
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  transform: translate(-50%, -50%);
+}
+
+- margin: 0 auto;  /* Centered by margin */
+- text-align: center;  /* Only effective on contents like text */
+
+- Centering by display-absolute:
+.center {  /* You should define with and height for elements without a default width and height */
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+- Centering by Calc in CSS3:
+.center {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: red;
+  top: calc(50% - 50px / 2); /* height divided by 2*/
+  left: calc(50% - 50px / 2); /* width divided by 2*/
+}
+
+- Centering by line-height
+div {
+  height: 200px;
+  line-height: 200px;
+}
+
+- Centering Vertically:
+div.vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+- Centering in relation to another item:
+.content * {
+  box-sizing: border-box;
+}
+.content .position-container {
+  display: table;
+}
+.content .details {
+  display: table-cell;
+  vertical-align: middle;
+  width: 33.333333%;
+  padding: 30px;
+  font-size: 17px;
+  text-align: center;
+}
+.content.thumb {
+  width: 100%;
+}
+.content.thumb img {
+  width: 100%;
+}
+
+- Centering horizontally and vertically without worring about size:
+The outer container should have display: table;
+The inner container
+  should have display: table-cell;
+  should have vertical-align: middle;
+  should have text-align: center;
+The content box
+  should have display: inline-block;
+  should re-adjust the horizontal text-alignment to eg. text-align: left; or text-align: right;  /* unless you want text to be centered */
+
+- Centering vertically and horizontally using 'table'
+<div class="wrapper">
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</div>
+.wrapper {
+  display: table;
+  vertical-align: center;
+  width: 200px;
+  height: 200px;
+  background-color: #9e9e9e;
+}
+.parent {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+}
+
+- box-sizing: content-box|padding-box|border-box;
+- Collapsing Margins: When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally, they do not collapse.
+
+- Browser specific border-radius:
+-webkit-border-top-right-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-top-left-radius: 0;
+-moz-border-radius-topright: 4px;
+-moz-border-radius-bottomright: 4px;
+-moz-border-radius-bottomleft: 0;
+-moz-border-radius-topleft: 0;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+
+- border-style: solid|dotted|dashed|double|groove|ridge|inset|outset|none|hidden(tables);
+- border: 1px solid black;
+- outline: 1px solid red;
+- box-shadow: 1px 1px 1px 2px green;
+- border-collapse: property applies only to table s (and elements displayed as display: table or inline-table ) and sets whether the table borders are collapsed into a single border or detached as in standard HTML.
+table {
+  border-collapse: separate; /* default */
+  border-spacing: 2px; /* Only works if border-collapse is separate */
+}
+
+- border-image: url("border.png") 30 stretch;
+- Muticolored border:
+.bordered {
+  border-image: linear-gradient(to right, red 20%, green 20%, green 40%, blue 40%, blue 60%, maroon
+    60%, maroon 80%, chocolate 80%); /* gradient with required colors */
+  border-image-slice: 1;
+}
+
+- Outline is a line that goes around the element, outside of the border. In contrast to border , outlines do not take any
+space in the box model. So adding an outline to an element does not affect the position of the element or other
+elements.
+
+- overflow-wrap: normal|break-word;
+- overflow-x: normal|break-word; overflow-y: normal|break-word;
+- overflow: scroll|visible|hidden|auto|inherit;
+
+- @media query types:
+Media Type
+  all: Apply to all devices
+  screen: Default computers
+  print: Printers in general. Used to style print-versions of websites
+  handheld: PDA's, cellphones and hand-held devices with a small screen
+  projection: For projected presentation, for example projectors
+  aural: Speech Systems
+  braille: Braille tactile devices
+  embossed: Paged braille printers
+  tv: Television-type devices
+  tty: Devices with a fixed-pitch character grid. Terminals, portables.
+
+- Detemine retina and none retina devices:
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-width: 1200px)
+  and (max-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+}
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-width: 1200px)
+  and (max-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+}
+
+- if using the widht with @media the below tag in head is a must:
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+- <link rel="stylesheet" media="min-width: 600px" href="example.css" />
+
+- Media queries doesn't work on IE8 and there is a solution in js:
+<!--[if lt IE 9]>
+<script
+  src="respond.min.js">
+</script>
+<![endif]-->
+<!--[if lt IE 9]>  <!-- Another library -->
+<script
+  src="css3-mediaqueries.js">
+</script>
+<![endif]-->
+
+- 
+
+________________________________________________________________________________
+
+Ajax Book
+_______________________________________
+
+- Create Simple Ajax App
+function initAjax() {
+  let ajax = false;
+  if(window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+  } else if(window.ActiveXObject("Microsoft.XMLHTTP")) {
+    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  return ajax;
+}
+
+function getDataByPost(elementTarget, stringDataSource) {
+  let XMLHttpRequestObject = initAjax();
+  let element = document.getElementById(elementTarget);
+  element.textContent = "Ajax: trying to retrive message...";
+  if(XMLHttpRequestObject) {
+    XMLHttpRequestObject.overrideMimeType("text");
+    XMLHttpRequestObject.open("POST", stringDataSource);
+    XMLHttpRequestObject.setRequestHeader(
+      'Content-Type', 'application/x-www-form-urlencoded');
+    XMLHttpRequestObject.onreadystatechange = function() {
+      if(XMLHttpRequestObject.readyStat == 4 &&
+         XMLHttpRequestObject.status == 200) {
+        element.textContent = XMLHttpRequestObject.responseText;
+      }
+    };
+    XMLHttpRequestObject.send('data=' + stringDataSource);
+  } else {
+    let element = document.getElementById(elementTarget);
+    element.textContent = "Warning: Ajax didn't work on your browser!";
+  }
+}
+
+function getDataByGet(elementTarget, stringDataSource) {
+  let XMLHttpRequestObject = initAjax();
+  let element = document.getElementById(elementTarget);
+  element.textContent = "Ajax: trying to retrive message...";
+  if(XMLHttpRequestObject) {
+    XMLHttpRequestObject.overrideMimeType("text");
+    XMLHttpRequestObject.open("GET", stringDataSource);
+    XMLHttpRequestObject.onreadystatechange = function() {
+      if(XMLHttpRequestObject.readyState == 4 &&
+        XMLHttpRequestObject.status == 200) {
+        element.textContent = XMLHttpRequestObject.responseText;
+      }
+    };
+    XMLHttpRequestObject.send(null);
+  } else {
+    let element = document.getElementById(elementTarget);
+    element.textContent = "Warning: Ajax didn't work on your browser!";
+  }
+}
+
+- eval('// JavaScript Code ... ');
+- PHP Code on Server to Generate XML Code
+<? header("Content-type: text/xml");
+if($_GET["menu"] == "1")
+  $menuitems = array("Ham", "Turkey", "Beef");
+if($_GET["menu"] == "2")
+  $menuitems = array("Tomato", "Cucumber", "Rice");
+echo '<?xml version="1.0" ?>';
+echo '<menu>';
+foreach($menuitems as $value) {
+  echo '<menuitem>';
+  echo $value;
+  echo '</menuitem>';
+}
+echo '</menu>';   ?>
+
+- <?php echo 'display()'; ?>
+
+- Using Built-in Eval Function:
+function echo(stringMessage) { console.log(stringMessage); }
+let obj, text = "{method: 'echo', operand: 'Hello from eval() function'};";
+eval(`obj = ${text};`);
+eval(`${obj.method}('${obj.operand}');`);
+
+- Using google suggestion API
+function sendRPCDone(unusedVariable, searchTerm, arrayTerm, arrayResults, unusedArray) {
+  let data = '<table>', index;
+  if(arrayResults.length !== 0) {
+    for(index = 0; index < arrayResults.length; index++) {
+      data += '<tr><td><a href="http://google.com/search?qu=' +
+              arrayTerm[index] + '"></a></td><td>' + arrayTerm[index] + '</td></tr>';
+    }
+    data += '</table>';
+    let divTarget = document.getElementById('divTarget');
+    divTarget.innerHTML = data;
+  }
+}
+
+- Hear Request
+function getDataByPost(dataSource, targetID) {
+  let ajax = false;
+  if(window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+  } else if(window.ActiveXObject) {
+    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  if(ajax) {
+    ajax.open("HEAD", dataSource);
+    ajax.onreadystatechange = function() {
+      if(ajax.readyState === 4 && ajax.status == 200) {
+        let target = document.getElementById(targetID);
+        target.textContent = ajax.getAllResponseHeaders() +
+                             ajax.getResponseHeader("Last-Modified");
+      }
+    };
+  }
+}
+
+- Remove Caching:
+getData("javascript.php?time=" + new Date.getTime());
+
+- Create Nodes by DOM
+let divTarget = document.getElementById("divTarget");
+let pNode = document.createElement("p");
+let textNode = document.createTextNode(`New p Element ${++intElementCounter}`);
+pNode.appendChild(textNode);
+divTarget.appendChild(pNode);
+
+- TODO: Add Mouse Handler Here!
+
+- 
+________________________________________________________________________________
+
+Javascript Algorithms And Data Structures Certification (300 hours)
+_______________________________________
+
+Course 1: Basic JavaScript
+
+Availble Comments in JavaScript are: /* ... */ and // ...
+JS Data Types: undefined, null, boolean, string, bigint, number, object
+Array internal functions --> length, push, pop, shift, unshift
+Variables without var/let are always global even inside functions!
+The === operator is just like == but without type conversion
+The !== operator is just like != but without type conversion
+obj = {property: value, ...}; // Definition of an object
+Access to object properties is possible by '.' and '[]' just like an array
+delete obj.properties;  // Delete the properties of object
+obj.hasOwnProperty('property-name');  // return true if the property is exists
+let newData = JSON.parse(JSON.stringify(data));  // Copy data to newData
+function log() {  // Equals to console.log
+  console.log.apply(null, arguments);  //console.log(...arguments);
+}
+_______________________________________
+
+Course 2: ECMAScript 6
+
+Use 'let' not 'var' and use with 'use strict'
+Object.freeze(obj);  // prevent mutation that ignore all write requests
+var Func = Function() { ... } ===>   const Func = () => value;  // Arrow Func
+const greeting = (name = "Anonymous") => "Hello " + name;  // Default Param
+[...arr]   // Spread operator
+state.concat(action.todo) equals to  [...state, action.todo]  // Adds an Item
+const { name, age } = user;   // Destructuring assignment
+const { name: userName, age: userAge } = user;
+const { johnDoe: { age: userAge, email: userEmail }} = user;  // Nested assign
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];  // Assignement from an array
+[a, b] = [b, a];  // Swap 'a' and 'b'
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+const half = ({min, max}) => (min + max) / 2;
+const myName = `My Name is ${person.name}!`;
+const getMousePosition = (x, y) => ({ x, y });
+const p = {name: "Taylor", hi() { return `Hi! My name is ${this.name}.`; } };
+class Vegetable {  constructor(name) { this.name = name;  }}
+class Book {   // getter & setter functions
+  constructor(author) {
+    this._author = author;
+  }
+  get writer() {
+    return this._author;
+  }
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+<script type="module" src="index.js"></script>  // about to use export/import
+export { func, var };
+import { add, subtract } from './math_functions.js';
+import * as stringFunctions from './string_functions.js';
+export default function func(x) { ... } // Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
+import add from "./math_functions.js";   // import default export from module
+const myPromise = new Promise((resolve, reject) => { });  // Define promise
+myPromise.then(result => { ... });  // Do something after resolve responsed
+myPromise.catch(error => { ... });  // Handle rejected promise
+_______________________________________
+
+Course 3: Regular Expressions
+
+regular expression form: let regex = \pattern\;
+let reged = \pattern\i;  \\ ignore all different cases (uppercase or lowercase)
+'string'.match(/regex/);  /regex/.test('string'); // Opposit of each others
+test return true or false but match extract matches
+/pattern/g   //Using to search or extract a pattern more than once.
+'.' will match any one character
+/b[aui]g/  // Match Single Character with Multiple Possibilities
+/[a-c0-5]/gi  // the '-' (hyphen) define a range of characters or numbers
+/[^0-9]/  //create a negated character set
+/s+/ig   // Match Characters that Occur One or More TimesPassed
+/s*/ig   // Match Characters that Occur Zero or More TimesPassed
+/i?/     //Find Characters with Lazy Matching
+/^Ricky/;  // Match Beginning String Patterns
+/String$/  // Match Ending String Patterns
+/[A-Za-z0-9_]/ = /\w/   // \w match all letters, numbers and underline
+/\W/ is opposite of /\w/
+[0-9] = \d   // Match all numbers
+[^0-9] = \d  // Match all none numbers
+/^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i   // Sample to check user name
+           ^ - start of input
+       [a-z] - first character is a letter
+  [0-9]{2,0} - ends with two or more numbers
+           | - or
+      [a-z]+ - has one or more letters next
+         \d* - and ends with zero or more numbers
+           $ - end of input
+           i - ignore case of input
+\s  =  [ \r\t\f\n\v]   // Match white spaces
+\S  =  [^ \r\t\f\n\v]  // Match all none white spaces
+/a{3,5}h/        // Specify Upper and Lower Number of Matches with brackets
+/ha{3,}h/  // Specify Only the Lower Number of Matches, a should be 3 or more
+"s".repeat(10);  // Repeat string N times
+/ha{3}h/         // Specify Exact Number of Matches
+/Hel?oo/   //Check for All or None - Zero or one 'o' element
+'qu'.match(/q(?=u)/  return q  // Positive Lookahead
+'qt'.match(/q(?!u)/  return q  // Negative Lookahead
+/^\D(?=\w{5})(?=\w*\d{2})/     // match passwords that are greater than 5 ...
+  characters long, do not begin with numbers, and have two consecutive digits.
+Penguin or Pumpkin in a string, you can use the following Regular Expression:
+  /P(engu|umpk)in/g   // Parentheses group more than one character
+/(test)\s\1/  =  /test\stest/  // Reuse capture groups
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');  // Returns "Camp Code"
+/^\s+|\s+$/g   // Trim string
+_______________________________________
+
+Course 4: Introduction to the Debugging Chanllenges
+
+typeof varname     // Returns the variable type
+let arraySum = myArray.reduce((a, b) =>  a + b);
+_______________________________________
+
+Course 5: Basic Data Structures
+
+arr.unshift(var);   // Adds variable to the head
+arr.push(var);      // Adds variable to the end
+var = arr.shift();  // Removes variable from the head
+var = arr.pop();    // Removes variable from the end of array
+arr.splice(x, y, arr...);   // Removes by x, y and x is index and y is count
+  // Add elements in arr to the same position of x as index
+newArr = arr.slice(i, j);   // Returns a sub-array that is beggining with i
+  // index and ends with j index and not includeing element on j index!
+newArr = [...arr];  // The '...' (spread operator) make a new copy off array
+arr.indexOf('...');
+delete obj.prop;    // Delete object properties
+'Property' in obj   // Check if an object has an property
+Object.keys(obj);   // Retrive all keys in object
+_______________________________________
+
+Course 5: Introduction to Basic Algorithm Scripting
+
+'Hellow JavaScript'.slice(-6)  ==  'Script'
+_______________________________________
+
+Course 5: Introduction to the Object Oriented Programming
+
+ClassName.prototype.varName = ...;  // Shared among ALL instances
+let beagle = new Dog();  // How to use contructor property
+  console.log(beagle.constructor === Dog);  //prints true
+Bird.prototype = { constructor: Bird } // define the constructor property
+Bird.prototype.isPrototypeOf(duck);  // returns true
+let animal = Object.create(Animal.prototype);  // Inheritence
+// Dog inherits 'eat' method from Animal:
+  Dog.prototype = Object.create(Animal.prototype);
+  let beagle = new Dog();  beagle.eat();
+// After inheritence we should set the constructor manually to sub class
+  function Bird() { }  // Bird constrcutor
+  Bird.prototype = Object.create(Animal.prototype);  // Bird inherit Animal
+  let duck = new Bird();   // duck.constructor is set to function Animal(){...}
+  Bird.prototype.constructor = Bird;  // We should set Bird constructor manually
+// Using mixin function to add a new method to different classes and objects
+  function Mixin(obj) { obj.MethodName = () => { /* Do something */ } }
+  Mixin(obj1); Mixin(obj2);  // Adding the method to both objects
+// Define private fields:
+  function Bird() {
+    let weight = 15;  // Instead of using 'this.weight = ...'
+    this.getWeight = () => { return weight; }
+  }
+// Understand the Immediately Invoked Function Expression (IIFE)
+  (function(t) {
+    console.log("A cozy nest is ready", t);
+  })(9);
+// Creating a module by IIFE
+let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      };
+    }
+  }
+})();
+
+_______________________________________
+
+Course 6: Functional Programming
+
+const names = users.map(user => user.name);  // Returns an array of username(s)
+users.filter(u => u.age > 30);  // Returns elements with age bigger than 30
+arr.reduce((obj, current, index, arr) => {});  // Reduce is horrible
+arr.sort((a, b) => a - b);  // Sort array
+str.split(/\W/);  // Split string by none alpha-numeric
+console.log(["Hello", "World"].join(" "));  // Present "Hello World"
+arr.every(v => v > 0);  // Returns true if all elemts are bigger than 0
+arr.some( ... );  // Check that Any Elements in an Array Meet a Criteria
+//Impartial function
+  function impartial(x, y, z) {
+    return x + y + z;
+  }
+  var partialFn = impartial.bind(this, 1, 2);
+  partialFn(10); // Returns 13
+
+_______________________________________
+
+Course 7: Intermediate Algorithm Scripting
+
+// Euclidean algorithm for the greatest common divisor.
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+// Least Common Multiple for two numbers based on GCD
+const lcm = (a, b) => (a * b) / gcd(a, b);
+
+________________________________________________________________________________
+
+Front End Libraries Certification (300 hours)
+_______________________________________
+
+Course 1: Bootstrap
+
+You can add Bootstrap to any app by adding the following code to the top of your HTML:
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+<img src="..." class="img-responsive">
+<button class="btn btn-default btn-block">Submit</button>
+The btn-primary class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
+The btn-info class is used to call attention to optional actions that the user can take.
+The btn-danger class is the button color you'll use to notify users that the button performs a destructive action
+<div class="row"> <div class="col-xs-4"> elements... </div> </div>
+.col-* .col-sm-* .col-md-* .col-lg-* .col-xl-*
+.container-fluid  // 100% width
+<h2 class="text-center">CatPhotoApp</h2>
+You can include Font Awesome in any app by adding the following code to the top of your HTML:
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+Using Font Awesome: <button class="btn btn-block btn-primary">Like <span class="fas fa-thumbs-up"></span></button>
+<div class="well"></div>
+
+________________________________________________________________________________
+
+Course 2: jQuery
+
+// Runs code after HTML rendered:
+$(document).ready(function() {
+  // Codes goes here
+});
+
+// Animate buttons by jQuery:
+$("button").addClass("animated bounce");
+// We've should add both the jQuery library and the Animate.css library
+
+// Shake elements that specified with .well class
+$(".well").addClass("animated shake");
+
+// Fade out animation
+$("#target3").addClass("animated fadeOut");   // Adds class to element
+$("#target2").removeClass("btn-default");     // Removes clas from element
+("btn-default");
+$("#target1").css("color", "red")             // Change CSS code
+$("#target1").prop("disabled", true);         // Disabled element
+$("#target_id").html("html code goes here");  // Change inner HTML
+$( "button.continue" ).html( "Next Step..." )
+$("#target_id").text("text code goes here");  // Changer text
+$("#target4").remove();  // Removes element
+$("#target2").appendTo("#right-well");        // Move element to other element
+$("#target2").clone().appendTo("#left-well"); // Copy element to other element
+$("#target1").parent().css("background-color", "red"); // Access to parent elem
+$("#right-well").children().css("color", "orange");    // Access to child elem
+$(".target:nth-child(2)").addClass("animated bounce"); // Access by classes
+$(".target:even").addClass("animated shake");          // Access by odd/even
+$("body").addClass("animated hinge");         // Crazy animation!
+var hiddenBox = $( "#banner-message" );       // Adds events
+$( "#button-container button" ).on( "click", function( event ) {
+  hiddenBox.show();
+});
+//Call a local script on the server /api/getWeather with the query parameter zipcode=97201 and replace the element #weather-temp's html with the returned text.
+$.ajax({ url: "/api/getWeather", data: { zipcode: 97201 },
+  success: function( result ) {
+    $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+  }
+});
+
+_______________________________________
+
+Course 3: Sass
+
+Using '$' to define variables
+Nesting is possible in sass
+
+//Mixin example:
+  @mixin border-radius($radius) {
+    border-style: solid;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+  }
+
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    @include border-radius(15px);
+  }
+
+// @if @else if and @else in SASS:
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    } @else if $val == medium {
+      border: 3px solid black;
+    } @else if $val == heavy {
+      border: 6px solid black;
+    } @else {
+      border: none;
+    }
+  }
+
+@for $i from 1 through 12 {   // For loop example
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+
+@for $j from 1 through 6 {    // For loop another example
+  .text-#{$j} {
+      font-size: 15px * $j;
+  }
+}
+
+$color_list: (color1: blue, color2: black, color3: red);
+@each $key, $value in $color_list {
+  .#{$value}-bg {
+    background-color: $value;
+  }
+}
+
+$i: 1;
+@while $i <= 5 {
+  .text-#{$i} {
+      font-size: $i * 15px;
+  }
+  $i: $i + 1;
+}
+
+@import 'variables'  // imports '_variables.scss' file contents
+
+.info{
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.info-important {
+  @extend .info;     // <-- extends info class here
+  background-color: magenta;
+}
+
+_______________________________________
+
+Course 4: React
+
+- React CDN:
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+- { 'JavaScript Code' }  // Codes between curly braces treated as JS in JSX
+- Babel is a popular JSX transpiler
+- ReactDOM.render(JSX, document.getElementById('root'))  // Render JSX
+- For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
+- {/* This is a valid JSX comment */}  
+- ReactDOM.render(JSX, document.getElementById('challenge-node'));  // Render to specified target
+- All HTML attributes and event references in JSX become camelCase
+- const JSX = ( <div className="myDiv">Text</div> );  // 'className' instead of 'class'
+- All tags like <br/> and <hr/> must be closed in JSX
+- const MyComponent = function() { return <div>Text</div>; };  // Stateless functional component
+- Stateless function should returns either JSX or null
+- React requires your function name to begin with a capital letter.
+- Define a React Component:
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (<div>...</div>);
+  }
+};
+
+- We can insert a child component in JSX code just like <ChildComponent />
+- ReactDOM.render(<ComponentToRender />, targetNode)  // Render component
+- React: Pass Props to a Stateless Functional Component:
+<p>The current date is: {props.date}</p>  // Nested component
+<CurrentDate date={Date()}/>              // Parent component
+- <List tasks={["Workout", "Make Love", "Make Money"]} />  // Pass array as prop
+- MyComponent.defaultProps = { location: 'San Francisco' } // Default Props
+- MyComponent.propTypes = {handleClick: PropTypes.func.isRequired} // PropTypes
+- React v15.5.0, PropTypes is imported independently from React, like this: import PropTypes from 'prop-types';
+- this.state = { name: 'Hello' };  // Define name as a state inside constructor
+- this.setState({name: 'Hello'});  // It's a better way to change state values
+- this.handleClick = this.handleClick.bind(this); // Bind handler to this
+- <button onClick={this.handleClick}>Button</button>
+- React update state and props asynchronous so we need to use a function to guarantees that we are working with the most current values of state and props.
+  this.setState((state, props) => ({
+    counter: state.counter + props.increment
+  }));
+
+- <input id="inputText" onChange={this.handleChange} value={this.state.input} />
+- Submit button need to refresh the web page with "event.preventDefault()"
+  handleSubmit(event) {
+    this.setState(state => ({
+      submit: state.input
+    }));
+    event.preventDefault();
+  }
+
+- Life cycle methods:
+componentWillMount() componentDidMount()
+shouldComponentUpdate() componentDidUpdate() componentWillUnmount()
+- shouldComponentUpdate(nextProps, nextState, nextContex) { return true/false; }
+- <div style={{color: "yellow", fontSize: "16px"}}>Mellow Yellow</div>  // Styles
+- {condition && <h1>Displayed!</h1>}  // Adds tag only if condition is true
+- const items = arr.map(i => <li key={i+1}>{i}</li>);
+- ReactDOMServer.renderToString(<App />); // Render React as String- Server Side
+______________________________________
+
+Course 5: Redux
+
+- const store = Redux.createStore(reducer);  // Redux keeps single point to store the app state
+- const store = Redux.createStore( (state = 5) => state );  // More concisely
+- let action = { type: 'LOGIN' };  // Action
+- function actionCreator() { return action; }  // Action creator
+
+- After an action is created and dispatched, the Redux store needs to know how to respond to that action. This is the job of a reducer function. Reducers in Redux are responsible for the state modifications that take place in response to actions. A reducer takes state and action as arguments, and it always returns a new state. It is important to see that this is the only role of the reducer. It has no side effects — it never calls an API endpoint and it never has any hidden surprises. The reducer is simply a pure function that takes state and action, then returns new state. Another key principle in Redux is that state is read-only.
+
+- Sample Redux Code:
+const defaultState = { login: false };
+const reducer = (state = defaultState, action) => {
+  return (action.type === 'LOGIN') ? { login: true } : state;
+};
+const store = Redux.createStore(reducer);
+const loginAction = () => { return {type: 'LOGIN'}; };
+
+- const authReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'LOGIN':
+      return { authenticated: true };
+    case 'LOGOUT':
+      return { authenticated: false };
+    default:
+      return state;
+  }
+};  // Standard form of reducer
+
+- Declare actions as constant variables with uppercase name
+- store.subscribe(callBack);  // Register a store listener
+- Combine two reducer into rootReducer and then create store:
+const rootReducer = Redux.combineReducers({
+  count: counterReducer,
+  auth: authReducer
+});
+const store = Redux.createStore(rootReducer);
+
+- Action with argument:
+const addNoteText = (note) => {
+  return {
+    text: note,
+    type: ADD_NOTE
+  };
+};
+
+- store.dispatch(addNoteText('Hello!'));  // Dispatch an action
+
+- Using asyncronous Redux:
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+
+- newState = [...state, action.newData];  // Adds to state
+- [...state.slice(0, action.index),
+   ...state.slice(action.index + 1, state.length) ];  // Removes an item
+- const newObject = Object.assign({}, obj1, obj2);  // This creates newObject as a new object, which contains the properties that currently exist in obj1 and obj2.
+- Object.assign({}, state, {status: 'online'});  // Change status in state obj
+_______________________________________
+
+Course 6: React and Redux
+
+- Provider takes two props, the Redux store and the child components of your app. Defining the Provider for an App component might look like this:
+<Provider store={store}>
+  <App/>
+</Provider>
+
+- In mapStateToProps functions, you declare what pieces of state you want to have access to and which action creators you need to be able to dispatch. Behind the scenes, React Redux uses the store.subscribe() method to implement mapStateToProps()
+const mapStateToProps = (state) => {
+    return {
+        messages: state
+    };
+}
+
+- The mapDispatchToProps() function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store.  React Redux is using Redux's store.dispatch() to conduct these dispatches with mapDispatchToProps() :
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) =>
+      dispatch(addMessage(message))
+  };
+}
+
+- to use connect() pass in the functions as arguments, and immediately call the result with your component. Note: If you want to omit one of the arguments to the connect method, you pass null in its place.
+const connect = ReactRedux.connect;
+const connectedC = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+- Connect Presentational class to AppWrapper:
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+const Container = connect(mapStateToProps,mapDispatchToProps)(Presentational)
+class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
+  }
+}
+________________________________________________________________________________
+
+Data Visualization Certification (300 hours)
+_______________________________________
+
+Course 1: D3
+
+- d3.select('body');  // Select an HTML element
+  htmlTag.append('h1');  // Add and a HTML element
+  htmlTag.text("Learning D3");  // Set text of htmlTag element
+  
+- d3.selectAll("a");  // Select all 'a' elements in document
+
+- How to generate HTML elements for each item of dataset
+    d3.select('body')      // Select an HTML element
+      .selectAll('h2')     // Select all h2 sub elements
+      .data(dataset)       // repeat below code over all items on data set
+      .enter()             // it looks at the selected elements from the page and compares them to the number of data items in the set. If there are fewer elements than data items, it creates the missing elements.
+      .append('h2')        // Append h2 element
+      .text('New Title');  // Set text of h2 element
+      
+- ...text((item) => `${item} USD`);  // In the example above, the parameter d refers to a single entry in the dataset that a selection is bound to
+- selectedElement.style("font-family", "verdana");  // Change style with d3
+- .style("color", (value) =>   // Conditional styling
+     (value < 20 ? "red" : "green")
+   );
+- elem.attr("class", "bar");  // Apply a class with 'bar' name to elem
+- Demonstrate a bar chart with D3
+const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+d3.select("body").selectAll("div")
+  .data(dataset)
+  .enter()
+  .append("div")
+  .style("height", v => v)
+  .style("width", "2em")
+  .style("background-color", v => v % 2 === 0 ? "red" : "blue")
+  .text(d => `${d}px`);
+
+- htmlElement.append("svg")  // Adds an 'svg' element to htmlElement
+- elem.attr("x", (item, index) => { ... })  // callBack iterate over dataset
+- svgElem.attr("fill", "red");  // Changes svg element color to red
+- svgElem.append("text");  // Adds text element to specified svg element
+- It's possible to apply CSS-classes to handle effect on svg element as well:
+  .bar:hover { fill: brown; }
+  svgElem.attr("class", "bar");  // Now mouse hover is availbale on svgElem
+- Add a tooltip to svg element:
+  element.append("title").text(d => d)
+- svgElement.append("circle").attr("cx", cx)....;  // circle(cx, cy, r) 
+- const scale = d3.scaleLinear();  // Change svg scale
+- Linear Scaling:
+	const scale = d3.scaleLinear();
+	scale.domain([250, 500]);
+	scale.range([10, 150]);
+	scale(50);  // returns -102
+- d3.min/max(dataArr, x => x[1]);  // min/max returns maximum data 
+
+- <body>
+  <script>
+    const dataset = [[34, 78], [109, 280], [310, 120], [79, 411], [420, 220],
+      [233, 145], [333, 96], [222, 333], [78, 320], [21, 123]];
+    const w = 500;
+    const h = 500;
+    const padding = 60;
+    const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+    const yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       .attr("cx", (d) => xScale(d[0]))
+       .attr("cy",(d) => yScale(d[1]))
+       .attr("r", (d) => 5);
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) =>  (d[0] + "," + d[1]))
+       .attr("x", (d) => xScale(d[0] + 10))
+       .attr("y", (d) => yScale(d[1]))
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
+    svg.append("g")
+       .attr("transform", "translate(0," + (h - padding) + ")")
+       .call(xAxis);
+    svg.append("g")
+       .attr("transform",
+         `translate(${padding},0)`)
+       .call(yAxis);
+  </script>
+</body>
+_______________________________________
+
+Course 1: JSON APIs and AJAX
+
+- Add event handler when page has been loaded:
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Loaded');
+      document.getElementById('getMessage').onclick = () => {
+        console.log('Get Message button has been clicked.');
+      };
+    });
+
+- Change text contents by class name:
+document.getElementsByClassName('message')[0].textContent = 'Message ...';
+
+- Get JSON data with GET request and XMLHttpRequest
+const onClick = () => {
+  console.log('onClick');
+  const req = new XMLHttpRequest();
+  req.open('GET', '/json/cats.json', true);
+  req.send();
+  req.onload = () => {
+    const jsonVar = JSON.parse(req.responseText);
+    document.getElementsByClassName("message")[0].innerHTML =
+      JSON.stringify(jsonVar);
+  }
+}
+
+- Same as using XMLHttpRequest
+fetch('/json/cats.json')
+  .then(response => response.json())  // makes a GET request, returns a Promise.
+  .then(data => {  // 
+    document.getElementById('message').innerHTML = JSON.stringify(data)
+});
+
+- Creating HTML code by JSON data
+const json = JSON.parse(req.responseText);
+let html = "";
+json.forEach(value => {
+  const keys = Object.keys(value);
+  html += "<div class=\"cat\">";
+  keys.forEach(key => {
+    html += "<strong>" + key + "</strong>";
+  });
+  html += "</div><br/>";
+});
+
+- Filter unused data in JSON data
+json = json.filter(val => {
+  return val.id !== 1;
+});
+
+- Read Geo location
+if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(function(position) {
+    document.getElementById('data').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+  });
+}
+
+- Post request by AJAX
+const userName = document.getElementById('name').value;
+const url = 'https://jsonplaceholder.typicode.com/posts';
+const xhr = new XMLHttpRequest();
+xhr.open('POST', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+xhr.onreadystatechange = () => {
+  if(xhr.readyState === 4 && xhr.status === 201) {
+    const sr = JSON.parse(xhr.response);
+    document.getElementsByClassName('message')[0].textContent =
+      sr.userName + sr.suffix;
+  }
+};
+const body = JSON.stringify({userName: userName, suffix: ' loves cats!'});
+xhr.send(body);
+________________________________________________________________________________
+
+APIs and Microservices Certification (300 hours)
+_______________________________________
+
+Managing Packages with Npm - package.json
+
+- There are only two required fields; "name" and "version"
+- "author": "Ardeshir Varmazyar", 
+- "description": "A project that does something awesome",
+- The keywords field is where you can describe your project using related keywords. Here's an example: "keywords": [ "descriptive", "related", "words" ]
+- "license": "GPLv3+", 
+- "version": "1.1.0", 
+- "dependencies": {         // Keeps dependencies with external packages
+    "express": "^4.14.0",   // "package": "MAJOR.MINOR.PATCH"
+    "moment": "2.14.0"
+  },
+- "package": "~1.3.8"  // Tilde allows dependency to update to the latest patches
+- "package": "^1.3.9"  // the caret will allow both MINOR updates and PATCHes
+- 
+_______________________________________
+
+Basic Node and Express
+
+- Serve a string such as “Hello Express” to whoever visits the root domain you could do so easily using Node and/or express:
+app.get("/", function(req, res) {
+  res.send("Hello Express");
+});
+
+- Serve a HTML file. __direname refer to root and res.sendFile() send it
+const strHTMLFile = __dirname + "/views/index.html";
+app.get('/', (req, res) => {  // Returns the HTML file as the result of web req
+  res.sendFile(strHTMLFile);
+});
+
+- Serve static assets with 'static' middleware, First param is optional
+app.use(express.static(__dirname + "/public"));
+
+- While an HTML server serves (you guessed it!) HTML, an API serves data.
+
+- RESTFULL API
+app.get('/json', (req, res) => {  // Serves a JSON object as the app/json value
+  res.json(myObj);
+});
+
+- The .env file is a hidden file that is used to pass environment variables
+- env variables are accessible bye process.env.VAR_NAME and stored as VAR=value
+- you can use the app.use(<mware-function>) method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use app.post(<mware-function>). Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
+
+- Middleware example. if you don't send response you must call nex() if not server will but stuck
+app.use((req, res, nex) => {
+  output = req.method + " " + req.path + " - " + req.ip;
+  console.log(output);
+  nex();
+});
+
+- This approach is useful to split the server operations into smaller units:
+app.get("/now",
+  (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  }, (req, res) => {
+    res.send({
+      time: req.time
+    });
+  });
+
+- Send parameters to server. Here "freecodecamp" has been send to app as word
+// https://boilerplate-express.ardeshirv.repl.co/freecodecamp/echo
+app.get('/:word/echo', (req, res) => {
+  res.json({echo: req.params.word});
+});
+
+- Another way is to get query parameter input
+        route_path: '/library'
+actual_request_URL: '/library?userId=546&bookId=6754'
+         req.query: {userId: '546', bookId: '6754'}
+// Here is an example:
+// https://boilerplate-express.ardeshirv.repl.co/name?first=Ardeshir&last=varmazyar
+app.get('/name', (req, res) => {
+  console.log(req.query);  // { first: 'Ardeshir', last: 'varmazyar' }
+  res.json({name: req.query.first + " " + req.query.last});
+});
+
+- To parse the data coming from POST requests, you have to install the body-parser package. This package allows you to use a series of middleware, which can decode data in different formats.
+app.use(bodyParser.urlencoded({extended: false}));  // use as middleware
+extended=false is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON
+
+- The conventional mapping is:
+POST (sometimes PUT) - Create a new resource using the information sent with the request,
+GET - Read an existing resource without modifying it,
+PUT or PATCH (sometimes POST) - Update a resource using the data sent,
+DELETE => Delete a resource.
+app.post('/name', (req, res) => {
+  res.json({name: req.body.first + " " + req.body.last});
+});
+_______________________________________
+
+MongoDB and Mondoose
+
+- Connect to Mogo Mongoose:
+const uri = process.env.MONGO_URI;
+let mongoose = require('mongoose');
+mongoose.connect(uri,
+  { useNewUrlParser: true, useUnifiedTopology: true});
+
+- The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating, or deleting. It's following the Node convention, and should be called as done(null, data) on success, or done(err) on error.
+
+- const someFunc = function(done) {  // Handler
+  //... do something (risky) ...
+  if (error) return done(error);
+  done(null, result);
+};
+
+- When you are building schema you can use either of three options for name validation
+name: String
+name: {type: String}
+name: {type: String, required: true} //preferred
+Create Person schema.
+
+- Create personeSchema
+const personSchema = new Monsoose.Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
+});
+
+- Create Person model from the schema.
+const Person = mongoose.model("Person", personSchema);
+
+- Creating and saving db item:
+Pass to it a callback using the Node convention. This is a common pattern; all the following CRUD methods take a callback function like this as the last argument.
+person.save(function(err, data) {
+  //   ...do your stuff here...
+});
+
+- var createAndSavePerson = function(done) {
+  var janeFonda = new Person({name: "Jane Fonda", age: 84, favoriteFoods: ["vodka", "air"]});
+
+  janeFonda.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data)
+  });
+};
+
+- Create a record set:
+const arrayOfPeople = [
+  {name: "Farhad", age: 45, favoriteFoods: ["milk", "beef"]},
+  {name: "Mamad", age: 28, favoriteFoods: ["wine", "pork"]},
+  {name: "Ardeshir", age: 35, favoriteFoods: ["water", "vegetables"]}
+];
+const createManyPeople = (arrayOfPeople, done) => {
+  Person.create(arrayOfPeople, (err, data) => { //The difference is about create
+    if(err)
+      return console.error(err);
+    else
+      done(null, data)
+  });
+};
+
+- const findPeopleByName = function(personName, done) {
+  Person.find({name: personName}, function (err, personFound) {
+    if (err) return console.log(err);
+    done(null, personFound);
+  });
+};
+
+- const findOneByFood = function(food, done) {
+  Person.findOne({favoriteFoods: food}, function (err, data) {
+    if (err) return console.log(err);
+    done(null, data);
+  });
+};
+
+- const findPersonById = (personId, done) => {
+  Person.findById({_id: personId}, (err, data) => {
+    if(err) {
+      console.error(err);
+      return done(err);
+    } else
+      return done(null, data);
+  });
+};
+
+- const findEditThenSave = (personId, done) => {
+  const foodToAdd = "hamburger";
+  
+  Person.findById({ _id: personId }, (err, foundPerson) => {
+    if(err) {
+      console.error(err);
+      done(err);
+    } else {
+      foundPerson.favoriteFoods.push(foodToAdd);
+      foundPerson.save((err, editedPerson) => {
+        if(err) {
+          console.error(err);
+          done(err);
+        } else {
+          done(null, editedPerson);
+        }
+      });
+    }
+    // done(null, foundPerson);
+  });
+};
+
+- Note: You should return the updated document. To do that, you need to pass the options document { new: true } as the 3rd argument to findOneAndUpdate(). By default, these methods return the unmodified object.
+const findAndUpdate = (personName, done) => {
+  const ageToSet = 20;
+
+  Person.findOneAndUpdate({name: personName}, {age: ageToSet}, {new: true}, (err, person) => {
+    if(err) {
+      console.error(err);
+      done(err);
+    } else {
+      done(null, person);
+    }
+  });
+};
+
+- const removeById = (personId, done) => {
+  Person.findOneAndRemove({_id: personId}, (err, data) => {
+    if(err) {
+      console.error(err);
+      done(err);
+    } else {
+      done(null, data);
+    }
+  });
+};
+
+- Note: The Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests.
+const removeManyPeople = (done) => {
+  const nameToRemove = "Mary";
+  Person.remove({name: nameToRemove}, (err, removeDataInfo) => {
+    if(err) {
+      error(err);
+      done(err);
+    } else {
+      done(null, removeDataInfo);
+    }
+  });
+};
+
+- Chain Search Query:  Chain .find(), .sort(), .limit(), .select(), and then .exec(). Pass the done(err, data) callback to exec().
+const queryChain = (done) => {
+  var foodToSearch = "burrito";
+  Person
+    .find({ favoriteFoods: foodToSearch })
+    .sort({ name: 1 })
+    .limit(2)
+    .select({ age: 0 })
+    .exec((err, data) => {
+      err ? done(err) : done(null, data);
+    });
+};   
+
+Further Reading
+If you are eager to learn and want to go deeper, You may look at:
+Indexes ( very important for query efficiency ),
+Pre/Post hooks, Validation,
+Schema Virtuals and Model, Static, and Instance methods.
+________________________________________________________________________________
+
+Quality Assurance Certification (300 hours)
+
+- Add the Chai library to test JavaScript codes
+const chai = require('chai');
+const assert = chai.assert;
+- chai.assert.isNull(null, 'The value is null');
+- chai.assert.isNotNull(1, 'The value is not null');
+- chai.assert.isDefined(null, 'null is not undefined');
+- chai.assert.isUndefined(undefined, 'undefined IS undefined');
+- assert.isNotOk(null, 'null is falsey');
+- assert.isOk("I'm truthy", 'a string is truthy');
+- assert.isTrue(!!'double negation', 'double negation of a truthy is true');
+- assert.itNotTrue({ value: 'truthy' }, 'A truthy object is NOT TRUE (neither is false...)');
+- equal() compares objects using ==.
+assert.notEqual({ value: 1 }, { value: 1 }, '== compares object references');
+assert.equal(6 * '2', '12', 'no more hints...');
+- strictEqual() compares objects using ===.
+assert.notStrictEqual(6, '6');
+assert.strictEqual(6, 3 * 2);
+assert.strictEqual(6 * '2', 12);
+assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
+- deepEqual() asserts that two objects are deep equal.
+assert.deepEqual({ a: '1', b: 5 }, { b: 5, a: '1' }, "keys order doesn't matter");
+assert.notDeepEqual({ a: [5, 6] }, { a: [6, 5] }, "array elements position does matter !!");  // **
+- isAbove() compares if the first parameter is greater than the second (a > b)
+  isAtMost() compares if the first parameter is equal to or less than the second (a <= b) **
+assert.isAtMost('hello'.length, 5);
+assert.isAbove(1, 0);
+assert.isAbove(Math.PI, 3);
+assert.isAtMost(1 - Math.random(), 1);
+- isBelow() compares if the first parameter is less than the second (a < b).
+  isAtLeast() compares if the first parameter is equal to or less than the second (a >= b)
+assert.isAtLeast('world'.length, 5);
+assert.isAtLeast(2 * Math.random(), 0);
+assert.isBelow(5 % 2, 2);
+assert.isBelow(2 / 3, 1);
+- Asserts that the actual is equal to expected, to within a +/- delta range. **
+.approximately(actual, expected, delta, [message])
+assert.approximately(weirdNumbers(0.5), 1, 0);
+assert.approximately(weirdNumbers(0.2), 1, 0);
+- assert.isArray('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');
+  assert.isNotArray([1, 2, 3].indexOf(2), 'indexOf returns a number.');
+- assert.notInclude(winterMonths, 'jul', "It's summer in july...");
+  assert.include(backendLanguages, 'javascript', 'JS is a backend language !!');
+- assert.isNotString(Math.sin(Math.PI / 4), 'a float is not a string');
+assert.isString(process.env.PATH, 'env vars are strings (or undefined)');
+assert.isString(JSON.stringify({ type: 'object' }), 'a JSON is a string');
+- const formatPeople = function(name, age) {
+return '# name: ' + name + ', age: ' + age + '\n'; };
+const regex = /^#\sname\:\s[\w\s]+,\sage\:\s\d+\s?$/;
+assert.match(formatPeople('John Doe', 35), regex);
+assert.notMatch(formatPeople('Paul Smith III', 'twenty-four'), regex);
+- Test on objects:
+assert.notProperty(myCar, 'wings', 'A car has not wings');
+assert.property(airlinePlane, 'engines', 'planes have engines');
+assert.property(myCar, 'wheels', 'Cars have wheels');
+- Test object is type of something
+assert.typeOf(myCar, 'object');
+assert.typeOf(myCar.model, 'string');
+assert.notTypeOf(airlinePlane.wings, 'string');
+assert.typeOf(airlinePlane.engines, 'array');
+assert.typeOf(myCar.wheels, 'number');
+
+- Functional Test on API needs:
+const chaiHttp = require("chai-http");
+chai.use(chaiHttp);
+chai.request(server)
+	.get("/hello")
+	.end(function (err, res) {
+	  assert.equal(res.status, 200);
+	  assert.equal(res.text, "hello Guest");
+	  done();
+	});
+_______________________________________
+
+Advanced Node and Express
+
+- 
+________________________________________________________________________________
+
+Scientific Computing with Python Certification (300 hours)
+________________________________________________________________________________
+
+Data Analysis with Python Certification (300 hours)
+________________________________________________________________________________
+
+Information Security Certification (300 hours)
+________________________________________________________________________________
+
+Machine Learning with Python Certification (300 hours)
+________________________________________________________________________________
+
+Coding Interview Prep (Thousands of hours of challenges)
+________________________________________________________________________________
+
+Git - Jadi
+
+- git init  # Initialize git repository
+- File ---add--> Stage ---commit--> Archive 
+- git status  # Report repository status
+- git add <file-name>  # Move specified file to stage phase
+- git add -A  # Move all new changes to stage
+- git commit -m 'Message about new changes'  # Commit new changes to repository
+- git log
+- git diff HEAD  # Show last changes
+- git diff -- staged  # Show differences with stage
+- git diff master  # Branch name
+- git diff dev
+- git reset page3.html  # Reset header and removes page3.html from stage
+- git checkout -- page3.html
+- git branch  # Demonstrate branches
+- git branch <new-branch-name>
+- git switch <branch-name>  # Change current branch
+- git checkout <branch-name>  # Change current branch
+- git merge <branch-name>  # Merge to the specified branch
+- git rm <file-name>  # Removes file from git and file system
+- git restore --staged <file> ; git restore <file>  # Restore removed file
+- git config --global core.editor "nano -l"  # Change default git editor
+- git clone https://github.com/.... # Clone a remote repository
+- git remote add origin https://github.com/ArdeshirV/my_test_proj  # Export local repo to github
+- git push -u origin master
+- git remote -v  # Demonstrate remote repositories
+- gpg --list-keys  # List public keys
+- gpg --list-secret-keys  # List private keys
+- gpg --list-secret-keys --keyid-format LONG
+- git config --global user.name  # Demonstrate user-name
+- git config --global user.signingkey  # Show signing key
+- git config --global user.signingkey <private-key>  # Update private key
+- git tag -a v1.2 -m 'Add anotate message here'
+- git tag -s v1.1 -m 'Sign this tag'  # Enter password and sign the tag
+- git show v1.1  # Show tag with my sign
+- git tag -v v1.1  # Show verbose output about tag-v1.1
+? - git commit -S -m 'Message'  # Sign commit - It doesn't work!
+- git blame filename.ext -L3,5  # Show all changes on line 3-5 and find writer and modifiers
+- git bisect start  # Binary-Search-commiT
+  git bisect bad    # Now we are in bad position!
+  git bisect good 1f1349...  # But here was so good - git will give us the best good guest by bi-seach
+- Pull request is so cool!
+________________________________________________________________________________
+
+New Topic Goes Here!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
