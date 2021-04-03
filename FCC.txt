@@ -1,4 +1,3 @@
-F55(BL) + 38(ML) + 7(Words)
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
 jQuery, Bootstrap --> Study about Examples,
@@ -527,460 +526,6 @@ overflow-y: scroll;  // Adds scrollbar if the contents become bigger than Height
 <embed></embed>      // Adds external HTML file into current page
 <strong></strong> = <b></b>
 <em></em> = <i></i>
-
-________________________________________________________________________________
-
-GoalKicker.com - CSS Notes for Professionals:
-
-// import from internal style tag
-<style>
-  @import url('/css/styles.css');
-</style>
-
-// import in external stylesheet
-@import 'additional-styles.css';
-@import 'https://fonts.googleapis.com/css?family=Lato';
-
-// An optional second argument to @import rule is a list of media queries:
-@import '/print-styles.css' print;
-@import url('landscape.css') screen and (orientation:landscape);
-
-// Modify styles by pure JavaScript
-let el = document.getElementById("element");
-el.style.opacity = 0.5;
-el.style.fontFamily = 'sans-serif';
-
-// Modify styles by jQuery
-$('#element').css('margin', '5px');
-$('#element').css({
-  margin: "5px",
-  padding: "10px",
-  color: "black"
-});
-$('.example-class').css({
-"background-color": "blue",
-fontSize: "10px"
-});
-
-// List style types
-disc, circle, square, decimal, lower-roman, upper-roman, none
-li { list-style-type: square; }
-li { list-style-image: url(images/bullet.png); }
-// The list-style-position property defines where to position the list-item marker, and it accepts one of two values: "inside" or "outside".
-li { list-style-position: inside; }
-
-// Shadow
-span { text-shadow: yellow 0 0 3px, green 4px 4px 10px; }
-
-p, .blue, #first, div span{ color : blue }
-// Applies to p, blue class, element with id first and every span inside of a div
-
-/* CSS comments goes here */
-
-Selector	Description
-*			Universal selector (all elements)
-div			Tag selector (all <div> elements)
-.blue		Class selector (all elements with class blue )
-.blue.red	All elements with class blue and red (a type of Compound selector)
-#headline	ID selector (the element with "id" attribute set to headline )
-:pseudo-class	All elements with pseudo-class
-::pseudo-element	Element that matches pseudo-element
-:lang(en)	Element that matches :lang declaration, for example <span lang="en">
-div > p		child selector
-
-Selector(1)		Matched element		Selects elements...
-[attr]			<div att>			With attribute attr
-[attr='val']	<div attr="val">	Where attribute attr has value val
-[attr~='val']	<div attr="val val2 val3"> Where val appears in the
-									whitespace-separated list of attr 2
-[attr^='val'] 	<div attr="val1 val2"> Where attr 's value begins with val 3
-[attr$='val']	<div attr="sth aval"> Where the attr 's value ends with val 3
-[attr*='val']	<div attr="somevalhere"> Where attr contains val anywhere 3
-[attr|='val']	<div attr="val-sth etc"> Where attr 's value is exactly val ,
-									or starts with val and immediately
-[attr='val' i]	<div attr="val">	Where attr has value val , ignoring val 's letter casing.
-
-Selector	Description
-div span	Descendant selector (all <span> s that are descendants of a <div> )
-div > span	Child selector (all <span> s that are a direct child of a <div> )
-a ~ span	General Sibling selector (all <span> s that are siblings after an <a> )
-a + span	Adjacent Sibling selector (all <span> s that are immediately after an <a> )
-
-.checkRange:not(:in-range) { color: red; }
-<input class="checkRange" type="number" min="0" max="100" value="0" />
-
-/* The following selector matches all <input> elements in an HTML document that are not disabled and don't have the
-class .example */
-input:not([disabled]):not(.example) { background-color: #ccc; }
-input:not([disabled], .example) { background-color: #ccc; }
-
-background: linear-gradient(to left top, red, yellow 10%);
-background: radial-gradient(red, yellow);
-
-background-size: xpx ypx | x% y%;
-background-repeat: no-repeat | repeat | repeat-x | repeat-y;
-background-position: left offset (px/%) right offset (px/%) | center center | left top | right bottom;
-
-/* In CSS3, we can stack multiple background in the same element. */
-#mydiv {
-	background-image: url(img_1.png), url(img_2.png), url(img_3.png);
-	background-position: right bottom, left top, right top;
-	background-repeat: no-repeat, repeat, no-repeat;
-}
-
-/* We can also use background shorthand property for this: */
-#mydiv {
-	background: url(img_1.png) right bottom no-repeat,
-	url(img_2.png) left top repeat,
-	url(img_3.png) right top no-repeat;
-}
-
-/* We can also stack images and gradients: */
-#mydiv {
-	background: url(image.png) right bottom no-repeat,
-	linear-gradient(to bottom, #fff 0%, #000 100%);
-}
-
-/* ... */
-background-attachment: scroll|fixed|local|initial|inherit;
-background-origin: border-box|padding-box|content-box|inherit;
-background-repeat: repeat-x|repeat-y|...;
-background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge |
-saturation | color | luminosity;
-background-color: RGBA(0, 0, 0, 0.6);  // Background color opacity
-
--Centering by flex:
-  display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center; /* vertical center */
-
-- Centering by CSS:
-.container {
-  position: relative;
-}
-.element {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera, Android */
-  -ms-transform: translate(-50%, -50%); /* IE 9 */
-  transform: translate(-50%, -50%);
-}
-
-- margin: 0 auto;  /* Centered by margin */
-- text-align: center;  /* Only effective on contents like text */
-
-- Centering by display-absolute:
-.center {  /* You should define with and height for elements without a default width and height */
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-- Centering by Calc in CSS3:
-.center {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  background: red;
-  top: calc(50% - 50px / 2); /* height divided by 2*/
-  left: calc(50% - 50px / 2); /* width divided by 2*/
-}
-
-- Centering by line-height
-div {
-  height: 200px;
-  line-height: 200px;
-}
-
-- Centering Vertically:
-div.vertical {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-- Centering in relation to another item:
-.content * {
-  box-sizing: border-box;
-}
-.content .position-container {
-  display: table;
-}
-.content .details {
-  display: table-cell;
-  vertical-align: middle;
-  width: 33.333333%;
-  padding: 30px;
-  font-size: 17px;
-  text-align: center;
-}
-.content.thumb {
-  width: 100%;
-}
-.content.thumb img {
-  width: 100%;
-}
-
-- Centering horizontally and vertically without worring about size:
-The outer container should have display: table;
-The inner container
-  should have display: table-cell;
-  should have vertical-align: middle;
-  should have text-align: center;
-The content box
-  should have display: inline-block;
-  should re-adjust the horizontal text-alignment to eg. text-align: left; or text-align: right;  /* unless you want text to be centered */
-
-- Centering vertically and horizontally using 'table'
-<div class="wrapper">
-  <div class="parent">
-    <div class="child"></div>
-  </div>
-</div>
-.wrapper {
-  display: table;
-  vertical-align: center;
-  width: 200px;
-  height: 200px;
-  background-color: #9e9e9e;
-}
-.parent {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-.child {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  background-color: teal;
-}
-
-- box-sizing: content-box|padding-box|border-box;
-- Collapsing Margins: When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally, they do not collapse.
-
-- Browser specific border-radius:
--webkit-border-top-right-radius: 4px;
--webkit-border-bottom-right-radius: 4px;
--webkit-border-bottom-left-radius: 0;
--webkit-border-top-left-radius: 0;
--moz-border-radius-topright: 4px;
--moz-border-radius-bottomright: 4px;
--moz-border-radius-bottomleft: 0;
--moz-border-radius-topleft: 0;
-border-top-right-radius: 4px;
-border-bottom-right-radius: 4px;
-border-bottom-left-radius: 0;
-border-top-left-radius: 0;
-
-- border-style: solid|dotted|dashed|double|groove|ridge|inset|outset|none|hidden(tables);
-- border: 1px solid black;
-- outline: 1px solid red;
-- box-shadow: 1px 1px 1px 2px green;
-- border-collapse: property applies only to table s (and elements displayed as display: table or inline-table ) and sets whether the table borders are collapsed into a single border or detached as in standard HTML.
-table {
-  border-collapse: separate; /* default */
-  border-spacing: 2px; /* Only works if border-collapse is separate */
-}
-
-- border-image: url("border.png") 30 stretch;
-- Muticolored border:
-.bordered {
-  border-image: linear-gradient(to right, red 20%, green 20%, green 40%, blue 40%, blue 60%, maroon
-    60%, maroon 80%, chocolate 80%); /* gradient with required colors */
-  border-image-slice: 1;
-}
-
-- Outline is a line that goes around the element, outside of the border. In contrast to border , outlines do not take any
-space in the box model. So adding an outline to an element does not affect the position of the element or other
-elements.
-
-- overflow-wrap: normal|break-word;
-- overflow-x: normal|break-word; overflow-y: normal|break-word;
-- overflow: scroll|visible|hidden|auto|inherit;
-
-- @media query types:
-Media Type
-  all: Apply to all devices
-  screen: Default computers
-  print: Printers in general. Used to style print-versions of websites
-  handheld: PDA's, cellphones and hand-held devices with a small screen
-  projection: For projected presentation, for example projectors
-  aural: Speech Systems
-  braille: Braille tactile devices
-  embossed: Paged braille printers
-  tv: Television-type devices
-  tty: Devices with a fixed-pitch character grid. Terminals, portables.
-
-- Detemine retina and none retina devices:
-/* ----------- Non-Retina Screens ----------- */
-@media screen
-  and (min-width: 1200px)
-  and (max-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-}
-/* ----------- Retina Screens ----------- */
-@media screen
-  and (min-width: 1200px)
-  and (max-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-}
-
-- if using the widht with @media the below tag in head is a must:
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-- <link rel="stylesheet" media="min-width: 600px" href="example.css" />
-
-- Media queries doesn't work on IE8 and there is a solution in js:
-<!--[if lt IE 9]>
-<script
-  src="respond.min.js">
-</script>
-<![endif]-->
-<!--[if lt IE 9]>  <!-- Another library -->
-<script
-  src="css3-mediaqueries.js">
-</script>
-<![endif]-->
-
-- 
-
-________________________________________________________________________________
-
-Ajax Book
-_______________________________________
-
-- Create Simple Ajax App
-function initAjax() {
-  let ajax = false;
-  if(window.XMLHttpRequest) {
-    ajax = new XMLHttpRequest();
-  } else if(window.ActiveXObject("Microsoft.XMLHTTP")) {
-    ajax = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  return ajax;
-}
-
-function getDataByPost(elementTarget, stringDataSource) {
-  let XMLHttpRequestObject = initAjax();
-  let element = document.getElementById(elementTarget);
-  element.textContent = "Ajax: trying to retrive message...";
-  if(XMLHttpRequestObject) {
-    XMLHttpRequestObject.overrideMimeType("text");
-    XMLHttpRequestObject.open("POST", stringDataSource);
-    XMLHttpRequestObject.setRequestHeader(
-      'Content-Type', 'application/x-www-form-urlencoded');
-    XMLHttpRequestObject.onreadystatechange = function() {
-      if(XMLHttpRequestObject.readyStat == 4 &&
-         XMLHttpRequestObject.status == 200) {
-        element.textContent = XMLHttpRequestObject.responseText;
-      }
-    };
-    XMLHttpRequestObject.send('data=' + stringDataSource);
-  } else {
-    let element = document.getElementById(elementTarget);
-    element.textContent = "Warning: Ajax didn't work on your browser!";
-  }
-}
-
-function getDataByGet(elementTarget, stringDataSource) {
-  let XMLHttpRequestObject = initAjax();
-  let element = document.getElementById(elementTarget);
-  element.textContent = "Ajax: trying to retrive message...";
-  if(XMLHttpRequestObject) {
-    XMLHttpRequestObject.overrideMimeType("text");
-    XMLHttpRequestObject.open("GET", stringDataSource);
-    XMLHttpRequestObject.onreadystatechange = function() {
-      if(XMLHttpRequestObject.readyState == 4 &&
-        XMLHttpRequestObject.status == 200) {
-        element.textContent = XMLHttpRequestObject.responseText;
-      }
-    };
-    XMLHttpRequestObject.send(null);
-  } else {
-    let element = document.getElementById(elementTarget);
-    element.textContent = "Warning: Ajax didn't work on your browser!";
-  }
-}
-
-- eval('// JavaScript Code ... ');
-- PHP Code on Server to Generate XML Code
-<? header("Content-type: text/xml");
-if($_GET["menu"] == "1")
-  $menuitems = array("Ham", "Turkey", "Beef");
-if($_GET["menu"] == "2")
-  $menuitems = array("Tomato", "Cucumber", "Rice");
-echo '<?xml version="1.0" ?>';
-echo '<menu>';
-foreach($menuitems as $value) {
-  echo '<menuitem>';
-  echo $value;
-  echo '</menuitem>';
-}
-echo '</menu>';   ?>
-
-- <?php echo 'display()'; ?>
-
-- Using Built-in Eval Function:
-function echo(stringMessage) { console.log(stringMessage); }
-let obj, text = "{method: 'echo', operand: 'Hello from eval() function'};";
-eval(`obj = ${text};`);
-eval(`${obj.method}('${obj.operand}');`);
-
-- Using google suggestion API
-function sendRPCDone(unusedVariable, searchTerm, arrayTerm, arrayResults, unusedArray) {
-  let data = '<table>', index;
-  if(arrayResults.length !== 0) {
-    for(index = 0; index < arrayResults.length; index++) {
-      data += '<tr><td><a href="http://google.com/search?qu=' +
-              arrayTerm[index] + '"></a></td><td>' + arrayTerm[index] + '</td></tr>';
-    }
-    data += '</table>';
-    let divTarget = document.getElementById('divTarget');
-    divTarget.innerHTML = data;
-  }
-}
-
-- Hear Request
-function getDataByPost(dataSource, targetID) {
-  let ajax = false;
-  if(window.XMLHttpRequest) {
-    ajax = new XMLHttpRequest();
-  } else if(window.ActiveXObject) {
-    ajax = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  if(ajax) {
-    ajax.open("HEAD", dataSource);
-    ajax.onreadystatechange = function() {
-      if(ajax.readyState === 4 && ajax.status == 200) {
-        let target = document.getElementById(targetID);
-        target.textContent = ajax.getAllResponseHeaders() +
-                             ajax.getResponseHeader("Last-Modified");
-      }
-    };
-  }
-}
-
-- Remove Caching:
-getData("javascript.php?time=" + new Date.getTime());
-
-- Create Nodes by DOM
-let divTarget = document.getElementById("divTarget");
-let pNode = document.createElement("p");
-let textNode = document.createTextNode(`New p Element ${++intElementCounter}`);
-pNode.appendChild(textNode);
-divTarget.appendChild(pNode);
-
-- TODO: Add Mouse Handler Here!
-
-- 
 ________________________________________________________________________________
 
 Javascript Algorithms And Data Structures Certification (300 hours)
@@ -2015,10 +1560,12 @@ _______________________________________
 
 Advanced Node and Express
 
-- 
+- passed
 ________________________________________________________________________________
 
 Scientific Computing with Python Certification (300 hours)
+
+- passed
 ________________________________________________________________________________
 
 Data Analysis with Python Certification (300 hours)
@@ -2031,6 +1578,136 @@ Machine Learning with Python Certification (300 hours)
 ________________________________________________________________________________
 
 Coding Interview Prep (Thousands of hours of challenges)
+________________________________________________________________________________
+
+Ajax Book
+_______________________________________
+
+- Create Simple Ajax App
+function initAjax() {
+  let ajax = false;
+  if(window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+  } else if(window.ActiveXObject("Microsoft.XMLHTTP")) {
+    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  return ajax;
+}
+
+function getDataByPost(elementTarget, stringDataSource) {
+  let XMLHttpRequestObject = initAjax();
+  let element = document.getElementById(elementTarget);
+  element.textContent = "Ajax: trying to retrive message...";
+  if(XMLHttpRequestObject) {
+    XMLHttpRequestObject.overrideMimeType("text");
+    XMLHttpRequestObject.open("POST", stringDataSource);
+    XMLHttpRequestObject.setRequestHeader(
+      'Content-Type', 'application/x-www-form-urlencoded');
+    XMLHttpRequestObject.onreadystatechange = function() {
+      if(XMLHttpRequestObject.readyStat == 4 &&
+         XMLHttpRequestObject.status == 200) {
+        element.textContent = XMLHttpRequestObject.responseText;
+      }
+    };
+    XMLHttpRequestObject.send('data=' + stringDataSource);
+  } else {
+    let element = document.getElementById(elementTarget);
+    element.textContent = "Warning: Ajax didn't work on your browser!";
+  }
+}
+
+function getDataByGet(elementTarget, stringDataSource) {
+  let XMLHttpRequestObject = initAjax();
+  let element = document.getElementById(elementTarget);
+  element.textContent = "Ajax: trying to retrive message...";
+  if(XMLHttpRequestObject) {
+    XMLHttpRequestObject.overrideMimeType("text");
+    XMLHttpRequestObject.open("GET", stringDataSource);
+    XMLHttpRequestObject.onreadystatechange = function() {
+      if(XMLHttpRequestObject.readyState == 4 &&
+        XMLHttpRequestObject.status == 200) {
+        element.textContent = XMLHttpRequestObject.responseText;
+      }
+    };
+    XMLHttpRequestObject.send(null);
+  } else {
+    let element = document.getElementById(elementTarget);
+    element.textContent = "Warning: Ajax didn't work on your browser!";
+  }
+}
+
+- eval('// JavaScript Code ... ');
+- PHP Code on Server to Generate XML Code
+<? header("Content-type: text/xml");
+if($_GET["menu"] == "1")
+  $menuitems = array("Ham", "Turkey", "Beef");
+if($_GET["menu"] == "2")
+  $menuitems = array("Tomato", "Cucumber", "Rice");
+echo '<?xml version="1.0" ?>';
+echo '<menu>';
+foreach($menuitems as $value) {
+  echo '<menuitem>';
+  echo $value;
+  echo '</menuitem>';
+}
+echo '</menu>';   ?>
+
+- <?php echo 'display()'; ?>
+
+- Using Built-in Eval Function:
+function echo(stringMessage) { console.log(stringMessage); }
+let obj, text = "{method: 'echo', operand: 'Hello from eval() function'};";
+eval(`obj = ${text};`);
+eval(`${obj.method}('${obj.operand}');`);
+
+- Using google suggestion API
+function sendRPCDone(unusedVariable, searchTerm, arrayTerm, arrayResults, unusedArray) {
+  let data = '<table>', index;
+  if(arrayResults.length !== 0) {
+    for(index = 0; index < arrayResults.length; index++) {
+      data += '<tr><td><a href="http://google.com/search?qu=' +
+              arrayTerm[index] + '"></a></td><td>' + arrayTerm[index] + '</td></tr>';
+    }
+    data += '</table>';
+    let divTarget = document.getElementById('divTarget');
+    divTarget.innerHTML = data;
+  }
+}
+
+- Hear Request
+function getDataByPost(dataSource, targetID) {
+  let ajax = false;
+  if(window.XMLHttpRequest) {
+    ajax = new XMLHttpRequest();
+  } else if(window.ActiveXObject) {
+    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  if(ajax) {
+    ajax.open("HEAD", dataSource);
+    ajax.onreadystatechange = function() {
+      if(ajax.readyState === 4 && ajax.status == 200) {
+        let target = document.getElementById(targetID);
+        target.textContent = ajax.getAllResponseHeaders() +
+                             ajax.getResponseHeader("Last-Modified");
+      }
+    };
+  }
+}
+
+- Remove Caching:
+getData("javascript.php?time=" + new Date.getTime());
+
+- Create Nodes by DOM
+let divTarget = document.getElementById("divTarget");
+let pNode = document.createElement("p");
+let textNode = document.createTextNode(`New p Element ${++intElementCounter}`);
+pNode.appendChild(textNode);
+divTarget.appendChild(pNode);
+
+- TODO: Add Mouse Handler Here!
+
+- 
+
 ________________________________________________________________________________
 
 Git - Jadi
@@ -2078,49 +1755,357 @@ Git - Jadi
 - Pull request is so cool!
 ________________________________________________________________________________
 
+GoalKicker.com - CSS Notes for Professionals:
+
+// import from internal style tag
+<style>
+  @import url('/css/styles.css');
+</style>
+
+// import in external stylesheet
+@import 'additional-styles.css';
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+// An optional second argument to @import rule is a list of media queries:
+@import '/print-styles.css' print;
+@import url('landscape.css') screen and (orientation:landscape);
+
+// Modify styles by pure JavaScript
+let el = document.getElementById("element");
+el.style.opacity = 0.5;
+el.style.fontFamily = 'sans-serif';
+
+// Modify styles by jQuery
+$('#element').css('margin', '5px');
+$('#element').css({
+  margin: "5px",
+  padding: "10px",
+  color: "black"
+});
+$('.example-class').css({
+"background-color": "blue",
+fontSize: "10px"
+});
+
+// List style types
+disc, circle, square, decimal, lower-roman, upper-roman, none
+li { list-style-type: square; }
+li { list-style-image: url(images/bullet.png); }
+// The list-style-position property defines where to position the list-item marker, and it accepts one of two values: "inside" or "outside".
+li { list-style-position: inside; }
+
+// Shadow
+span { text-shadow: yellow 0 0 3px, green 4px 4px 10px; }
+
+p, .blue, #first, div span{ color : blue }
+// Applies to p, blue class, element with id first and every span inside of a div
+
+/* CSS comments goes here */
+
+Selector	Description
+*			Universal selector (all elements)
+div			Tag selector (all <div> elements)
+.blue		Class selector (all elements with class blue )
+.blue.red	All elements with class blue and red (a type of Compound selector)
+#headline	ID selector (the element with "id" attribute set to headline )
+:pseudo-class	All elements with pseudo-class
+::pseudo-element	Element that matches pseudo-element
+:lang(en)	Element that matches :lang declaration, for example <span lang="en">
+div > p		child selector
+
+Selector(1)		Matched element		Selects elements...
+[attr]			<div att>			With attribute attr
+[attr='val']	<div attr="val">	Where attribute attr has value val
+[attr~='val']	<div attr="val val2 val3"> Where val appears in the
+									whitespace-separated list of attr 2
+[attr^='val'] 	<div attr="val1 val2"> Where attr 's value begins with val 3
+[attr$='val']	<div attr="sth aval"> Where the attr 's value ends with val 3
+[attr*='val']	<div attr="somevalhere"> Where attr contains val anywhere 3
+[attr|='val']	<div attr="val-sth etc"> Where attr 's value is exactly val ,
+									or starts with val and immediately
+[attr='val' i]	<div attr="val">	Where attr has value val , ignoring val 's letter casing.
+
+Selector	Description
+div span	Descendant selector (all <span> s that are descendants of a <div> )
+div > span	Child selector (all <span> s that are a direct child of a <div> )
+a ~ span	General Sibling selector (all <span> s that are siblings after an <a> )
+a + span	Adjacent Sibling selector (all <span> s that are immediately after an <a> )
+
+.checkRange:not(:in-range) { color: red; }
+<input class="checkRange" type="number" min="0" max="100" value="0" />
+
+/* The following selector matches all <input> elements in an HTML document that are not disabled and don't have the
+class .example */
+input:not([disabled]):not(.example) { background-color: #ccc; }
+input:not([disabled], .example) { background-color: #ccc; }
+
+background: linear-gradient(to left top, red, yellow 10%);
+background: radial-gradient(red, yellow);
+
+background-size: xpx ypx | x% y%;
+background-repeat: no-repeat | repeat | repeat-x | repeat-y;
+background-position: left offset (px/%) right offset (px/%) | center center | left top | right bottom;
+
+/* In CSS3, we can stack multiple background in the same element. */
+#mydiv {
+	background-image: url(img_1.png), url(img_2.png), url(img_3.png);
+	background-position: right bottom, left top, right top;
+	background-repeat: no-repeat, repeat, no-repeat;
+}
+
+/* We can also use background shorthand property for this: */
+#mydiv {
+	background: url(img_1.png) right bottom no-repeat,
+	url(img_2.png) left top repeat,
+	url(img_3.png) right top no-repeat;
+}
+
+/* We can also stack images and gradients: */
+#mydiv {
+	background: url(image.png) right bottom no-repeat,
+	linear-gradient(to bottom, #fff 0%, #000 100%);
+}
+
+/* ... */
+background-attachment: scroll|fixed|local|initial|inherit;
+background-origin: border-box|padding-box|content-box|inherit;
+background-repeat: repeat-x|repeat-y|...;
+background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge |
+saturation | color | luminosity;
+background-color: RGBA(0, 0, 0, 0.6);  // Background color opacity
+
+-Centering by flex:
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+
+- Centering by CSS:
+.container {
+  position: relative;
+}
+.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera, Android */
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  transform: translate(-50%, -50%);
+}
+
+- margin: 0 auto;  /* Centered by margin */
+- text-align: center;  /* Only effective on contents like text */
+
+- Centering by display-absolute:
+.center {  /* You should define width and height for elements without a default width and height */
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+- Centering by Calc in CSS3:
+.center {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: red;
+  top: calc(50% - 50px / 2); /* height divided by 2*/
+  left: calc(50% - 50px / 2); /* width divided by 2*/
+}
+
+- Centering by line-height
+div {
+  height: 200px;
+  line-height: 200px;
+}
+
+- Centering Vertically:
+div.vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+- Centering in relation to another item:
+.content * {
+  box-sizing: border-box;
+}
+.content .position-container {
+  display: table;
+}
+.content .details {
+  display: table-cell;
+  vertical-align: middle;
+  width: 33.333333%;
+  padding: 30px;
+  font-size: 17px;
+  text-align: center;
+}
+.content.thumb {
+  width: 100%;
+}
+.content.thumb img {
+  width: 100%;
+}
+
+- Centering horizontally and vertically without worring about size:
+The outer container should have display: table;
+The inner container
+  should have display: table-cell;
+  should have vertical-align: middle;
+  should have text-align: center;
+The content box
+  should have display: inline-block;
+  should re-adjust the horizontal text-alignment to eg. text-align: left; or text-align: right;  /* unless you want text to be centered */
+
+- Centering vertically and horizontally using 'table'
+<div class="wrapper">
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</div>
+.wrapper {
+  display: table;
+  vertical-align: center;
+  width: 200px;
+  height: 200px;
+  background-color: #9e9e9e;
+}
+.parent {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+}
+
+- box-sizing: content-box|padding-box|border-box;
+- Collapsing Margins: When two margins are touching each other vertically, they are collapsed. When two margins touch horizontally, they do not collapse.
+
+- Browser specific border-radius:
+-webkit-border-top-right-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-top-left-radius: 0;
+-moz-border-radius-topright: 4px;
+-moz-border-radius-bottomright: 4px;
+-moz-border-radius-bottomleft: 0;
+-moz-border-radius-topleft: 0;
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+
+- border-style: solid|dotted|dashed|double|groove|ridge|inset|outset|none|hidden(tables);
+- border: 1px solid black;
+- outline: 1px solid red;
+- box-shadow: 1px 1px 1px 2px green;
+- border-collapse: property applies only to table s (and elements displayed as display: table or inline-table ) and sets whether the table borders are collapsed into a single border or detached as in standard HTML.
+table {
+  border-collapse: separate; /* default */
+  border-spacing: 2px; /* Only works if border-collapse is separate */
+}
+
+- border-image: url("border.png") 30 stretch;
+- Muticolored border:
+.bordered {
+  border-image: linear-gradient(to right, red 20%, green 20%, green 40%, blue 40%, blue 60%, maroon
+    60%, maroon 80%, chocolate 80%); /* gradient with required colors */
+  border-image-slice: 1;
+}
+
+- Outline is a line that goes around the element, outside of the border. In contrast to border ,outlines do not take any
+space in the box model. So adding an outline to an element does not affect the position of the element or other elements.
+
+- overflow-wrap: normal|break-word;
+- overflow-x: normal|break-word; overflow-y: normal|break-word;
+- overflow: scroll|visible|hidden|auto|inherit;
+
+- @media query types:
+Media Type
+  all: Apply to all devices
+  screen: Default computers
+  print: Printers in general. Used to style print-versions of websites
+  handheld: PDA's, cellphones and hand-held devices with a small screen
+  projection: For projected presentation, for example projectors
+  aural: Speech Systems
+  braille: Braille tactile devices
+  embossed: Paged braille printers
+  tv: Television-type devices
+  tty: Devices with a fixed-pitch character grid. Terminals, portables.
+
+- Determine retina and none retina devices:
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-width: 1200px)
+  and (max-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+}
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-width: 1200px)
+  and (max-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+}
+
+<!-- if using the width with @media the below tag in head is a must -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+- <link rel="stylesheet" media="min-width: 600px" href="example.css" />
+
+- Media queries doesn't work on IE8 and there is a solution in js:
+<!--[if lt IE 9]>
+<script
+  src="respond.min.js">
+</script>
+<![endif]-->
+<!--[if lt IE 9]>  <!-- Another library -->
+<script
+  src="css3-mediaqueries.js">
+</script>
+<![endif]-->
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________
+
 New Topic Goes Here!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
