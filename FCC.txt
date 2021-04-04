@@ -2074,15 +2074,194 @@ Media Type
 </script>
 <![endif]-->
 
+- div {
+  direction: ltr; /* Default, text read read from left-to-right */
+}
+.ex {
+  direction: rtl; /* text read from right-to-left */
+}
+.horizontal-tb {
+  writing-mode: horizontal-tb;
+  /* Default, text read from left-to-right and top-to-  bottom. */
+}
+.vertical-rtl {
+  writing-mode: vertical-rl; /* text read from right-to-left and top-to-bottom */
+}
+.vertical-ltr {
+  writing-mode: vertical-rl; /* text read from left-to-right and top to bottom */
+}
+
+- text-shadow: horizontal-offset vertical-offset blur color;   <!-- Shadow -->
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;  <!-- Multiple shadow -->
+- text-transform: capitalize|lowercase|initial|inherit|none
+- letter-spacing: -1px;
+- The text-indent property specifies how much horizontal space text should be moved before the beginning of the
+first line of the text content of an element.
+  text-indent: 50px;
+
+- Text decoration:
+  text-decoration: none|overline|line-through|underline;
+  text-decoration-style: dotted;
+  text-decoration-line: underline;
+  text-decoration-color: blue;
+  <!-- equals to: -->
+  text-decoration: underline dotted blue;
+  It should be noted that the following properties are only supported in Firefox
+  text-decoration-color, text-decoration-line, text-decoration-style, text-decoration-skip
+
+- word-spacing: normal|inherit|+NUMpx|-NUMpx;
+
+- font-variant: small-caps|normal;
+  Sets every letter to uppercase, but makes the lowercase letters(from original text) smaller in size than the letters
+that originally uppercase. Note: The font-variant property is a shorthand for the properties: font-variant-caps, font-variant-numeric, font-
+variant-alternates, font-variant-ligatures, and font-variant-east-asian.
+
+- Sticky Variable-Height Footer
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  /* Include `0 auto` for best browser compatibility. */
+  flex: 1 0 auto;
+}
+.header, .footer {
+  background-color: grey;
+  color: white;
+  flex: none;
+}
+
+- Optimally fit elements to their container. Columns adapt as screen is resized.
+<div class="flex-container">
+	<div class="flex-item">1</div>
+	<div class="flex-item">2</div>
+	<div class="flex-item">3</div>
+	<div class="flex-item">4</div>
+	<div class="flex-item">5</div>
+</div>
+CSS:
+.flex-container {
+	background-color: #000;
+	height: 100%;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	align-items: stretch;
+}
+.flex-item {
+	background-color: #ccf;
+	margin: 0.1em;
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 200px; /* or % could be used to ensure a specific layout */
+}
+
+- Holy Grail Layout using Flexbox
+Holy Grail layout is a layout with a fixed height header and footer, and a center with 3 columns. The 3 columns include a fixed width sidenav, a fluid center, and a column for other content like ads (the fluid center appears first in the markup). CSS Flexbox can be used to achieve this with a very simple markup:
+<div class="container">
+	<header class="header">Header</header>
+	<div class="content-body">
+		<main class="content">Content</main>
+		<nav class="sidenav">Nav</nav>
+		<aside class="ads">Ads</aside>
+	</div>
+	<footer class="footer">Footer</footer>
+</div>
+body {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+.header {
+	flex: 0 0 50px;
+}
+.content-body {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: row;
+}
+.content-body .content {
+	flex: 1 1 auto;
+	overflow: auto;
+}
+.content-body .sidenav {
+	order: -1;
+	flex: 0 0 100px;
+	overflow: auto;
+}
+.content-body .ads {
+	flex: 0 0 100px;
+	overflow: auto;
+}
+.footer {
+	flex: 0 0 50px;
+}
+
+- Cascading and Specificity
+A:	id selector: #foo
+B:	class selectors: .bar
+	attribute selectors: [title], [colspan="2"]
+	pseudo-classes: :hover, :nth-child(2)
+C:	type selectors:  div, li	
+	pseudo-elements: ::before , ::first-letter
+
+- currentColor
+div {
+  color: red;
+  border: 5px solid currentColor;
+  box-shadow: 0 0 5px currentColor;
+}
+
+- Opacity in old IE
+.transparent-element {
+/* for IE 8 & 9 */
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; // IE8
+/* works in IE 8 & 9 too, but also 5, 6, 7 */
+filter: alpha(opacity=60); // IE 5-7
+/* Modern Browsers */
+opacity: 0.6;
+}
+
+- pseudo-element - Description
+         ::after   Insert content after the content of an element
+        ::before   Insert content before the content of an element
+  ::first-letter   Selects the first letter of each element
+    ::first-line   Selects the first line of each element
+     ::selection   Matches the portion of an element that is selected by a user
+      ::backdrop   Used to create a backdrop that hides the underlying document for an element in the top layer's stack
+   ::placeholder   Allows you to style the placeholder text of a form element (Experimental)
+        ::marker   For applying list-style attributes on a given element (Experimental)
+::spelling-error   Represents a text segment which the browser has flagged as incorrectly spelled (Experimental)
+ ::grammar-error   Represents a text
+
+- Pseudo-Elements in Lists Pseudo-elements are often used to change the look of lists (mostly for unordered lists, ul). The first step is to remove the default list bullets:
+ul {
+	list-style-type: none;
+}
+Then you add the custom styling. In this example, we will create gradient boxes for bullets.
+li:before {
+	content: "";
+	display: inline-block;
+	margin-right: 10px;
+	height: 10px;
+	width: 10px;
+	background: linear-gradient(red, blue);
+}
+<ul>
+  <li>Test I</li>
+  <li>Test II</li>
+</ul>
+
 - 
-
-
-
-
-
-
-
-
 
 
 
