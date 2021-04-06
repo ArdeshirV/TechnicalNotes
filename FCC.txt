@@ -2280,7 +2280,45 @@ table-column: Let the element behave like a <col> element
 table-row: Let the element behave like a <tr> element
 list-item: Let the element behave like a <li> element.
 
+- Grid: The CSS Grid is defined as a display property. It applies to a parent element and its immediate children only.
+.container {
+  display: grid;
+  grid-columns: 50px 50px 50px;
+  grid-rows: 50px 50px;
+}
+.container .item1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+- Tables
+table-layout: auto|fixed;
+empty-cells: show|hide;
+border-collapse: seperate|collapse;
+border-spacing: <horizontal>px <vertical>px;
+caption-side: top|bottom;
+
+Transitions - This example will change the background color when the div is hovered the background-color change will last 1 second:
+div {
+  width: 150px;
+  height:150px;
+  background-color: red;
+  transition: background-color 1s;
+}
+div:hover{
+  background-color: green;
+}
+<div></div>
+
+- transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+cubic-bezier(P1_x, P1_y, P2_x, P2_y)
+linear : cubic-bezier(0,0,1,1)
+ease-in : cubic-bezier(0.42, 0.0, 1.0, 1.0)
+ease-out : cubic-bezier(0.0, 0.0, 0.58, 1.0)
+ease-in-out : cubic-bezier(0.42, 0.0, 0.58, 1.0)
+
 - 
+
 
 
 
