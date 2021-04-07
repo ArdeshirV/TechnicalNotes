@@ -2134,6 +2134,8 @@ body {
   flex: none;
 }
 
+/*-----------------------------------------------------------------------------*/
+
 - Optimally fit elements to their container. Columns adapt as screen is resized.
 <div class="flex-container">
 	<div class="flex-item">1</div>
@@ -2317,17 +2319,413 @@ ease-in : cubic-bezier(0.42, 0.0, 1.0, 1.0)
 ease-out : cubic-bezier(0.0, 0.0, 0.58, 1.0)
 ease-in-out : cubic-bezier(0.42, 0.0, 0.58, 1.0)
 
+- Transition example:
+.divTr {
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+    transition-delay: 0.0s, 0.0s;
+    transition-duration: 500ms, 500ms;
+    transition-property: height, width;
+    transition-timing-function: linear;
+}
+.divTr:hover {
+    width: 100px;
+}
+
+- Animation - 
+@keyframes
+[ from | to | <percentage> ] You can either specify a set time with a percentage value, or two percentage values, ie 10%, 20% , for a period of time where the keyframe's set attributes are set. block Any amount of CSS attributes for the keyframe.
+
+- Rainbow Animation Example:
+@keyframes rainbow-background {
+		0%	{ background-color: #ff0000; }
+	8.333% 	{ background-color: #ff8000; }
+	16.667%	{ background-color: #ffff00; }
+	25.000%	{ background-color: #80ff00; }
+	33.333%	{ background-color: #00ff00; }
+	41.667%	{ background-color: #00ff80; }
+	50.000%	{ background-color: #00ffff; }
+	58.333%	{ background-color: #0080ff; }
+	66.667%	{ background-color: #0000ff; }
+	75.000%	{ background-color: #8000ff; }
+	83.333%	{ background-color: #ff00ff; }
+	91.667%	{ background-color: #ff0080; }
+	100.00%	{ background-color: #ff0000; }
+}
+.RainbowBackground {
+	animation: rainbow-background 5s infinite 0s ease;
+}
+
+- Compatibility:
+@-webkit-keyframes{}
+-webkit-animation: ...
+.Example{
+	transition:
+	all 400ms ease;
+	-moz-transition:
+	all 400ms ease;
+	-webkit-transition: all 400ms ease;
+}
+
+- animation: 3s  ease-in     1s    2          reverse   both      paused     slidein;
+/*           dur|timing-func|delay|iter-count|direction|fill-mode|play-state|name     */
+
+- animation: 3s linear 1s slidein;
+/* duration | timing-function | delay | name */
+
+animation-duration: 3s;
+animation-timing-function: ease-in;
+animation-delay: 1s;
+animation-iteration-count: 2;
+animation-direction: reverse;
+animation-fill-mode: both;
+animation-play-state: paused;
+animation-name: slidein;
+
+- Performance is increased by offloading calculations to the device's GPU:
+will-change: transform, opacity;
+
+- 2D Transforms:
+rotate(x) Defines a transformation that moves the element around a fixed point on the Z axis
+translate(x,y) Moves the position of the element on the X and Y axis
+translateX(x) Moves the position of the element on the X axis
+translateY(y) Moves the position of the element on the Y axis
+scale(x,y) Modifies the size of the element on the X and Y axis
+scaleX(x) Modifies the size of the element on the X axis
+scaleY(y) Modifies the size of the element on the Y axis
+skew(x,y) Shear mapping, or transvection, distorting each point of an element by a certain angle in each direction
+skewX(x) Horizontal shear mapping distorting each point of an element by a certain angle in the horizontal direction
+skewY(y) Vertical shear mapping distorting each point of an element by a certain angle in the vertical direction
+matrix() Defines a 2D transformation in the form of a transformation matrix.
+angle - The angle by which the element should be rotated or skewed (depending on the function with which it is used). Angle can be provided in degrees ( deg ), gradians ( grad ), radians ( rad ) or turns ( turn ). In skew() function, the second angle is optional. If not provided, there will be no (0) skew in Y-axis.
+length-or-percentage -  The distance expressed as a length or a percentage by which the element should be translated. In translate() function, the second length-or-percentage is optional. If not provided, then there would be no (0) translation in Y-axis.
+scale-factor A number which defines how many times the element should be scaled in the specified axis.
+In scale() function, the second scale-factor is optional. If not provided, the first scale factor will be applied for Y-axis also.
+
+- Filter property:
+blur(x):  Blurs the image by x pixels.
+brightness(x):  Brightens the image at any value above 1.0 or 100%. Below that, the image will be darkened.
+contrast(x):  Provides more contrast to the image at any value above 1.0 or 100%. Below that, the image will get less saturated.
+drop-shadow(h, v, x, y, z):  Gives the image a drop-shadow. h and v can have negative values. x, y, and z are optional.
+greyscale(x):  Shows the image in greyscale, with a maximum value of 1.0 or 100%.
+hue-rotate(x):  Applies a hue-rotation to the image.
+invert(x):  Inverts the color of the image with a maximum value of 1.0 or 100%.
+opacity(x):  Sets how opaque/transparent the image is with a maximum value of 1.0 or 100%.
+saturate(x):  Saturates the image at any value above 1.0 or 100%. Below that, the image will start to de-saturate.
+sepia(x):  Converts the image to sepia with a maximum value of 1.0 or 100%.
+
+- Filters example:
+p {
+	-webkit-filter: drop-shadow(10px 10px 1px green);
+	filter: drop-shadow(10px 10px 1px green);
+}
+
+- box-shadow: box-shadow: 0px 0px 8px 2px #444444;
+inset:  by default, the shadow is treated as a drop shadow. the inset keyword draws the shadow inside the frame/border.
+offset-x:  the horizontal distance
+offset-y:  the vertical distance
+blur-radius:  0 by default. value cannot be negative. the bigger the value, the bigger and lighter the shadow becomes.
+spread-radius:  0 by default. positive values will cause the shadow to expand. negative values will cause the shadow to shrink.
+color:  can be of various notations: a color keyword, hexadecimal, rgb() , rgba() , hsl() , hsla()
+-webkit-box-shadow: 0px 0px 8px 2px #444444;
+   -moz-box-shadow: 0px 0px 8px 2px #444444;
+        box-shadow: 0px 0px 8px 2px #444444;
+
+- Shape for floats:
+img:nth-of-type(1) {
+	shape-outside: circle(80px at 50% 50%);
+	float: left;
+	width: 200px;
+}
+img:nth-of-type(2) {
+	shape-outside: circle(80px at 50% 50%);
+	float: right;
+	width: 200px;
+}
+p {
+	text-align: center;
+	line-height: 30px; /* purely for demo */
+}
+
+- List style type:
+list-style-type:  the type of list-item marker.
+list-style-position:  specifies where to place the marker
+list-style-image:  specifies the type of list-item marker
+initial:  sets this property to its default value
+inherit:  inherits this property from its parent element
+
+- List style example:
+Sometimes, a list should just not display any bullet points or numbers. In that case, remember to specify margin and padding.
+<ul>
+	<li>first item</li>
+	<li>second item</li>
+</ul>
+CSS
+ul {
+	list-style-type: none;
+}
+li {
+	margin: 0;
+	padding: 0;
+}
+
+- Counters:
+counter-name:  This is the name of the counter that needs to be created or incremented or printed. It can be any custom name as the developer wishes.
+integer:  This integer is an optional value that when provided next to the counter name will represent the initial value of the counter (in counter-set , counter-reset properties) or the value by which the counter should be incremented (in counter-increment ).
+none:  This is the initial value for all 3 counter-* properties. When this value is used for counter-increment , the value of none of the counters are affected. When this is used for the other two, no counter is created.
+counter-style:  This specifies the style in which the counter value needs to be displayed. It supports all values supported by the list-style-type property. If none is used then the counter value is not printed at all.
+connector-string:  This represents the string that must be placed between the values of two different counter levels (like the "." in "2.1.1").
+
+- Counter example:
+body {
+	counter-reset: item-counter;
+}
+.item {
+	counter-increment: item-counter;
+}
+.item:before {
+	content: counter(item-counter, upper-roman) ". "; /* by specifying the upper-roman as style the output would be in roman numbers */
+}
+<div class='item'>Item No: 1</div>
+<div class='item'>Item No: 2</div>
+<div class='item'>Item No: 3</div>
+
+- Multi-level nested counters:
+ul {
+	list-style: none;
+	counter-reset: list-item-number; /* self nesting counter as name is same for all levels */
+}
+li {
+	counter-increment: list-item-number;
+}
+li:before {
+	content: counters(list-item-number, ".") " "; /* usage of counters() function means value of counters at all higher levels are combined before printing */
+}
+<ul>
+	<li>Level 1
+		<ul>
+			<li>Level 1.1
+			<ul>
+				<li>Level 1.1.1</li>
+			</ul>
+			</li>
+		</ul>
+	</li>
+	<li>Level 2
+		<ul>
+			<li>Level 2.1
+				<ul>
+					<li>Level 2.1.1</li>
+					<li>Level 2.1.2</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>Level 3</li>
+</ul>
+
+- CSS Functions:
+calc:  background-position: calc(50% + 17px) calc(50% + 10px), 50% 50%;
+attr:  Returns the value of an attribute of the selected element.
+var: The var() function allows CSS variables to be accessed.
+radial-gradient(red, orange, yellow);
+linear-gradient( 0deg, red, yellow 50%, blue);
+
+- Variable cascadings:
+<a class="button">Button Green</a>
+<a class="button button_red">Button Red</a>
+<a class="button">Button Hovered On</a>
+.button {
+	--color: green;
+	padding: .5rem;
+	border: 1px solid var(--color);
+	color: var(--color);
+}
+.button:hover {
+	--color: blue;
+}
+.button_red {
+	--color: red;
+}
+
+- Spacing in variables:
+--color:;   /* Invalid */
+--color: ;  /* Valid   */
+
+- Careful about using units such as px
+--width: 10;
+width: var(--width)px;  /* Invalid */
+--width: 10;
+width: calc(1px * var(--width));  /* multiply by 1 unit to convert */
+width: calc(1em * var(--width));  /* Valid */
+
+- Create triangles by border:
+<div class="triangle-up"></div>
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid rgb(246, 156, 85);
+}
+
+- Circle by border-radius: 50%;
+<div class="circle"></div>
+.circle {
+	width: 50px;
+	height: 50px;
+	background: rgb(246, 156, 85);
+	border-radius: 50%;
+}
+
+- Burst with 12 edges:
+<div class="burst-12"></div>
+.burst-12 {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	text-align: center;
+	background: rgb(246, 156, 85);
+}
+.burst-12::before, .burst-12::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background: rgb(246, 156, 85);
+}
+.burst-12::before {
+	-ms-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+.burst-12::after {
+	-ms-transform: rotate(60deg);
+	transform: rotate(60deg);
+}
+
+- Cube:
+<div class="cube"></div>
+.cube {
+	background: #dc2e2e;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	margin: 50px;
+}
+.cube::before {
+	content: '';
+	190display: inline-block;
+	background: #f15757;
+	width: 100px;
+	height: 20px;
+	transform: skewX(-40deg);
+	position: absolute;
+	top: -20px;
+	left: 8px;
+}
+.cube::after {
+	content: '';
+	display: inline-block;
+	background: #9e1515;
+	width: 16px;
+	height: 100px;
+	transform: skewY(-50deg);
+	position: absolute;
+	top: -10px;
+	left: 100%;
+}
+
+- Pyramids:
+<div class="pyramid"></div>
+.pyramid {
+	width: 100px;
+	height: 200px;
+	position: relative;
+	margin: 50px;
+}
+.pyramid::before,.pyramid::after {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: 50px solid;
+	GoalKicker.com – CSS Notes for Professionals
+	191position: absolute;
+}
+.pyramid::before {
+	border-color: transparent transparent #ff5656 transparent;
+	transform: scaleY(2) skewY(-40deg) rotate(45deg);
+}
+.pyramid::after {
+	border-color: transparent transparent #d64444 transparent;
+	transform: scaleY(2) skewY(40deg) rotate(-45deg);
+}
+
+- Multi-column: The CSS multi-column layout makes it easy to create multiple columns of text.
+.multi-columns {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+}
+
+- column-width: The column-width property sets the minimum column width. If column-count is not defined the browser will make as many columns as fit in the available width.
+.multi-columns {
+	-moz-column-width: 100px;
+	-webkit-column-width: 100px;
+	column-width: 100px;
+}
+
+- With the following CSS applied the content is split into three columns separated by a gray column rule of two pixels:
+section {
+	columns: 3;
+	column-gap: 40px;
+	column-rule: 2px solid gray;
+}
+
+- Clipping: clip-path: circle(100px at center);
+- Masking: mask: url(masks.svg#rectangle) luminance;
+
+- Mask example:
+div {
+	height: 200px;
+	width: 200px;
+	background: url(http://lorempixel.com/200/200/nature/1);
+	mask-image: linear-gradient(to right, white, transparent);
+}
+<div></div>
+
+- Adding a background image by CSSOM (CSS Object Model)
+var stylesheet = document.styleSheets[0].cssRules;
+var end = stylesheet.length - 1;
+stylesheet.insertRule("body { background-image: url('http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico'); }", end);
+
+- Queries:
+@supports (display: flex) {
+	/* Flexbox is available, so use it */
+	.my-container {
+		display: flex;
+	}
+}
+
+- Web browser compatibility:
+div {
+	-webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	transition: all 4s ease;
+}
+div {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
 - 
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2355,4 +2753,16 @@ New Topic Goes Here!
 
 
 
-
+HTML Question:
+  JavaScript How to get font width and font height?
+  CSS How to use calc and get html.height body.height and element.height?
+  lynx is safe or links?
+  
+  
+  
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum
