@@ -2727,6 +2727,11 @@ div {
 
 - 
 
+_______________________________________________________________________________
+
+JavaScript Goal Kicker
+
+- 
 
 
 
@@ -2746,12 +2751,13 @@ div {
 
 
 
-________________________________________________________________________________
-
-New Topic Goes Here!
 
 
 
+
+
+
+_______________________________________________________________________________
 
 HTML Question:
   JavaScript How to get font width and font height?
@@ -2759,10 +2765,4 @@ HTML Question:
   lynx is safe or links?
   
   
-  
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-laborum
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
