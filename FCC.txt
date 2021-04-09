@@ -2731,14 +2731,132 @@ _______________________________________________________________________________
 
 JavaScript Goal Kicker
 
+- Using place holders with log():
+var greet = "Hello", who = "World";
+console.log("%s, %s!", greet, who);
+
+- You have the ability to log any element which exists within the DOM. In this case we log the body element:
+console.log(document.body);
+
+- text output:
+<p id="paragraph"></p>
+document.getElementById("paragraph").textContent = "Hello, World";
+
+- Create a new element by DOM and JS:
+var element = document.createElement('p');
+element.textContent = "Hello, World";
+document.body.appendChild(element);
+
+- Alert message:
+window.alert(message);
+
+- input prompt:
+var age = prompt("How old are you?");
+console.log(age);
+
+- The window.confirm() method displays a modal dialog with an optional message and two buttons, OK and Cancel:
+result = window.confirm(message);
+// result is a boolean value indicating whether OK or Cancel was selected (true means OK).
+
+- Using Canvas:
+var canvas = document.createElement('canvas');
+canvas.width = 500;
+canvas.height = 250;
+var ctx = canvas.getContext('2d');
+ctx.font = '30px Cursive';
+ctx.fillText("Hello world!", 50, 50);
+document.body.appendChild(canvas);
+
+- Using SVG:
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+svg.width = 500;
+svg.height = 50;
+var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+text.setAttribute('x', '0');
+text.setAttribute('y', '50');
+text.style.fontFamily = 'Times New Roman';
+text.style.fontSize = '50';
+text.textContent = 'Hello world!';
+svg.appendChild(text);
+document.body.appendChild(svg);
+
+- Add image to a page:
+var img = new Image();
+img.src = 'https://i.ytimg.com/vi/zecueq-mo4M/maxresdefault.jpg';
+document.body.appendChild(img);
+
+- null
+null == undefined; // true
+null === undefined; // false
+typeof null; // 'object';
+
+- isNaN(variable);  // Check the variable is a number or not
+
+- null and undefined:
+undefined is a global value that represents the absence of an assigned value.
+	typeof undefined === 'undefined'
+null is an object that indicates that a variable has been explicitly assigned "no value".
+	typeof null === 'object'
+
+- Setting a variable to undefined means the variable effectively does not exist. Some processes, such as JSON serialization, may strip undefined properties from objects.
+
+- Positive and nevgative zero(s)!
+log('+0 -->', +0, ', -0 -->', -0, 'Oopss!');  // +0 --> 0 , -0 --> -0 Oopss!
+log('-0 === +0 -->', -0 === +0);  // -0 === +0 --> true
+log('1/-0 === 1/+0 -->', 1/-0 === 1/+0, 'Oopss!');  // 1/-0 === 1/+0 --> false Oopss!
+
+- Operations that returns NaN:
+[1, 2, 3] * 2  // Returns NaN
+[2] * [3]  // Returns 6
+0 / 0  // Returns NaN - but impossible in mathematics
+
+- Hide JavaScript from lagacy codes:
+<script type="text/javascript" language="JavaScript">
+	<!--
+	/* Arbitrary JavaScript code.
+	Old browsers would treat
+	it as HTML code. */
+	// -->
+</script>
+
+- JavaScript will be ignored when run as HTML:
+<!--
+self.postMessage('reached JS "file"');
+/*
+-->
+<!DOCTYPE html>
+<script>
+var w1 = new Worker('#1');
+w1.onmessage = function (e) {
+console.log(e.data); // 'reached JS "file"
+};
+</script>
+<!--
+*/
+-->
+
+- console.time:
+console.time('response in');
+alert('Click to continue');
+console.timeEnd('response in');
+alert('One more time');
+console.timeEnd('response in');
+// output:
+response in: 774.967ms
+response in: 1402.199ms
+
+- Formatting console output:
+%s Formats the value as a string
+%i or %d Formats the value as an integer
+%f Formats the value as a floating point value
+%o Formats the value as an expandable DOM element
+%O Formats the value as an expandable JavaScript object
+%c Applies CSS style rules to the output string as specified by the second parameter
+
+- Example:
+console.log('%cHello world!', 'color: blue; font-size: xx-large');
+
 - 
-
-
-
-
-
-
-
 
 
 
