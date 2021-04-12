@@ -2959,20 +2959,176 @@ var b16 = b10.toString(16); // "c"  // base 16 String representation
 var b16 = 'c';  // base 16 String representationr
 var b10 = parseInt(b16, 16); // 12  // base 10 Numbe
 
-- 
+- Convert from radix 10 to 16:
+let num10 = 12;
+let num16 = num10.toString(16);  // c = 0xC
+let numRadix16 = 'c';
+let numRadix10 = parseInt(numRadix16, 16);
 
+- To convert an arbitrary number (i.e. non-integer) from its String representation into a Number, the operation must be split into two parts; the integer part and the fraction part.
+let b16 = '3.243f3e0370cdc';
+// Split into integer and fraction parts
+let [i16, f16] = b16.split('.');
+// Calculate base 10 integer part
+let i10 = parseInt(i16, 16); // 3
+// Calculate the base 10 fraction part
+let f10 = parseInt(f16, 16) / Math.pow(16, f16.length); // 0.14158999999999988
+// Put the base 10 parts together to find the Number
+let b10 = i10 + f10; // 3.14159
 
+- includes( searchString, start )
+includes() will return a boolean that tells whether searchString exists in the string, starting from index start (defaults to 0). This is better than indexOf() if you simply need to test for existence of a substring.
+var string = "Hello, World!";
+console.log( string.includes("Hello") );  // true
+console.log( string.includes("foo") );    // false
 
+- replace( regexp|substring, replacement|replaceFunction )
+- replaceFunction can be used for conditional replacements for regular expression objects (i.e., with use with regexp ). The parameters are in the following order:
+Parameter
+match:		the substring that matches the entire regular expressiong
+g1, g2, g3, ...: the matching groups in the regular expression
+offset:		the offset of the match in the entire string
+string:		the entire string
+Note that all parameters are optional. Example:
+var string = "heLlo, woRlD!";
+string = string.replace( /([a-zA-Z])([a-zA-Z]+)/g, function(match, g1, g2) {
+	return g1.toUpperCase() + g2.toLowerCase();
+});
+console.log(string);  // "Hello, World!"
 
+- String.toUpperCase();
+- String.toLowerCase();
+- "abc".repeat(3); // Returns "abcabcabc"
+- Equal to:
+var myString = "abc";
+new Array(3 + 1).join(myString);  // Returns "abcabcabc"
 
+- Date(i1, i2, i3, i4, i5, i6) reads the arguments as year, month, day, hours, minutes, seconds, milliseconds and instantiates the corresponding Date object. Note that the month is 0-indexed in JavaScript, so 0 means January and 11 means December. Example: new Date(2017, 5, 1) gives June 1st, 2017.
 
+- // If you actually wanted to set the year to the year 12 CE, you'd need to use the setFullYear() method:
+special1.setFullYear(12);
 
+- Date():
+toString();  // Local date/time format
+toUTCString();   // Instead of toGMTString() that is deprecated.
+toISOString();
+toTimeString();  // 07:48:48 GMT-0400 (Eastern Daylight Time)
+toDateString();  // Thu Apr 14 2016
+toLocalDateString();
+getDay(); getUTCDay();
+getMonth(); getUTCMonth();
+getFullYear(); getUTCFullYear();
+getDate(); getUTCDate();
+setUTCFullYear(2000, 0, 31);
+setUTCHours(12, 0, 0, 0);
+setUTCSeconds(); setUTCMiliseconds();
 
+- Custom DateObject
+var DateObject = (function() {
+	var monthNames = [
+		"January", "February", "March",
+		"April", "May", "June", "July",
+		"August", "September", "October",
+		"November", "December"];
+	var date = function(str) {
+		this.set(str);
+	};
+	date.prototype = {
+		set : function(str) {
+			var dateDef = str ? new Date(str) : new Date();
+			this.day = dateDef.getDate();
+			this.dayPadded = (this.day < 10) ? ("0" + this.day) : "" + this.day;
+			this.month = dateDef.getMonth() + 1;
+			this.monthPadded = (this.month < 10) ? ("0" + this.month) : "" + this.month;
+			this.monthName = monthNames[this.month - 1];
+			this.year = dateDef.getFullYear();
+		},
+		get : function(properties, separator) {
+			var separator = separator ? separator : '-'
+			ret = [];
+			for(var i in properties) {
+				ret.push(this[properties[i]]);
+			}
+			return ret.join(separator);
+		}
+	};
+	return date;
+})();
 
+- Identical
+Object.is(NaN, NaN) // true
+Object.is(+0, 0)    // false
+NaN === NaN         // false
++0 === 0            // true
 
+if (!Object.is) {
+	Object.is = function(x, y) {
+		// SameValue algorithm
+		if (x === y) { // Steps 1-5, 7-10
+			// Steps 6.b-6.e: +0 != -0
+			return x !== 0 || 1 / x === 1 / y;
+	} else {
+		// Step 6.a: NaN == NaN
+		return x !== x && y !== y;
+		}
+	};
+}
 
+typeof(NaN) === "number"; //true
 
+null == undefined  // true
+null === undefined // false
 
+- boolean coercion
+let d = 1 || 5;  // d = 1
+let a = '' || [];// a = []
+
+[+0].includes(-0);  // true - same as object.is(x, y) but +0 is equal to -0
+
+- Strategy instead of switch/case statement:
+const AnimalSays = {
+	dog () {
+		return 'woof';
+	},
+	cat () {
+		return 'meow';
+	},
+	lion () {
+		return 'roar';
+	},
+	// ... other animals
+	default () {
+		return 'moo';
+	}
+};
+const speak = AnimalSays[animal] || AnimalSays.default;
+
+- Convert array-like objects to array:
+const realArray = Array.from(arrayLike);
+[...arrayLike]
+const realArray = Object.values(arrayLike);  // JS Version >= 7
+var realArray = Object.keys(arrayLike).map((key) => arrayLike[key]);
+// in ES5:
+var realArray = Array.prototype.slice.call(arrayLike);  // correct
+realArray = [].slice.call(arrayLike);                   // also correct!
+
+// Using Array.prototype.<Function-name>.call(<array-name>, ...);
+var domList = document.querySelectorAll('#myDropdown option');
+domList.forEach(function() {
+	// Do stuff
+}); // Error! forEach is not defined.
+Array.prototype.forEach.call(domList, function() {
+	// Do stuff
+}); // Wow! this works
+
+Array.from(domList, element => element.tagName); // Creates an array of tagName's
+
+- reduce - The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value:
+// Flatten array of objects:
+array.reduce(function(obj, current) {
+	obj[current.key] = current.value;
+	return obj;
+}, {});
 
 
 
