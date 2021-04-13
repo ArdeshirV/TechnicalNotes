@@ -3130,6 +3130,121 @@ array.reduce(function(obj, current) {
 	return obj;
 }, {});
 
+- map with reduce:
+function map(array, fn) {
+  return array.reduce((newArr, current) => { return newArr.concat(fn(current)); }, []);
+}
+arr.map((num) => { return num * num; });  // Equals to this statement
+
+- Retrieve uniq members:
+let arr = [1, 7, 9, 8, 7, 2, 3, 4, 3, 2, 7, 11];
+log('arr =', arr);
+arr = arr.reduce((prev, current) => {
+  if(prev.indexOf(current) === -1)
+    prev.push(current);
+  return prev;
+}, []);
+log('arr =', arr);
+
+- Map function:
+Version ≥ 5.1
+['one', 'two', 'three', 'four'].map(function(value, index, arr) {
+	return value.length;
+});  // → [3, 3, 5, 4]
+Version ≥ 6
+['one', 'two', 'three', 'four'].map(value => value.length);  // → [3, 3, 5, 4]
+
+- Map fourth custom parameter is 'this' that refer to different data in diff envs:
+['one', 'two'].map(function(value, index, arr) {
+	console.log(this); // Object { documentation: "randomObject" }
+return value.length;
+}, {  // You can change it to any custom object like this:
+	documentation: 'randomObject'
+});
+
+- Filter function:
+let odd = arr.filter(n => n % 2 !== 0); // can be shortened to (n => n % 2)
+
+- Function sort: Sorts array by unicode without parameter in place.
+arr.sort();
+
+- Sort alphabetically:
+arr.sort((a, b) => a.toString().localCompare(b));
+
+- Sort Numerically:
+arr.sort((a, b) => a - b);
+
+- <Array-Name>.keys();  // Gives an array of indices
+
+- Foreach function:  // Version ≥ 5
+[1, 2, 3, 4].forEach(function(value, index, arr) {
+	var twoValue = value * 2;
+	console.log("2 * value is: %d", twoValue);
+});
+
+- Every function:
+// [].every() stops once it finds a false result
+// thus, this iteration will stop on value 7 (since 7 % 2 !== 0)
+[2, 4, 7, 9].every(function(value, index, arr) {
+	console.log(value);
+	return value % 2 === 0; // iterate until an odd number is found
+});
+
+- Some:
+Array.prototype.some iterates until we return true:  Version ≥ 5
+// [].some stops once it finds a false result
+// thus, this iteration will stop on value 7 (since 7 % 2 !== 0)
+[2, 4, 7, 9].some(function(value, index, arr) {
+	console.log(value);
+	return value === 7; // iterate until we find value 7
+})
+
+- Destructuring an array:  // js6.0+
+const triangle = [3, 4, 5];
+const [length, height, hypotenuse] = triangle;
+const [, b,, c] = [1, 2, 3, 4];  // 2, 4
+const [b, c, ...xs] = [2, 3, 4, 5];  // → 2, 3, [4, 5]
+
+- Return uniq values by filter:
+var uniqueArray = ['a', 1, 'a', 2, '1', 1].filter(function(value, index, self) {
+	return self.indexOf(value) === index;
+}); // returns ['a', 1, 2, '1']
+var uniqueArray = [... new Set(['a', 1, 'a', 2, '1', 1])];  // Also using set object
+
+- Compare two array when there is not circular references:
+JSON.stringify(array1) === JSON.stringify(array2)
+
+- Cyclic references:
+a = [0] ;
+a[1] = a;
+b = [0, a];
+compareArrays(a, b); // throws RangeError: Maximum call stack size exceeded
+
+- Reverse array in place:
+arr.reverse();
+
+- Clone an array:
+var clone = arrayToClone.slice();  // All methods that we used to convert object like arrays also workds good here
+
+- Concat two arrays:
+var array1 = [1, 2], array2 = [3, 4, 5];
+var array3 = array1.concat(array2);  // Version ≥ 3
+var array3 = [...array1, ...array2]  // Version ≥ 6
+
+- Spread operator also works on strings:
+let arr = [..."123456"];  // ["1", "2", "3", "4", "5", "6"]
+
+- function myFunction(a, b, c) { }
+let args = [0, 1, 2];
+myFunction(...args);
+// in ES < 6, this would be equivalent to:
+myFunction.apply(null, args);
+
+- 
+
+
+
+
 
 
 
