@@ -3240,7 +3240,81 @@ myFunction(...args);
 // in ES < 6, this would be equivalent to:
 myFunction.apply(null, args);
 
+- let bob = people.find(person => person.name === "bob");  // find function
+
+- findIndex: The findIndex() method returns an index in the array, if an element in the array satisfies the provided testing function. Otherwise -1 is returned:
+var index = array.findIndex(item => item.value === 3); // 2
+var index = array.findIndex(item => item.value === 12); // -1
+
+- Split
+var strArray = "StackOverflow".split("");
+// strArray = ["S", "t", "a", "c", "k", "O", "v", "e", "r", "f", "l", "o", "w"]
+var strArray = [..."sky is blue"];
+// strArray = ["s", "k", "y", " ", "i", "s", " ", "b", "l", "u", "e"]
+
+- arr.shift();  // Removes the first item of an array
+- arr.pop();    // Removes the last item of an array
+- [1, 2, 3, 4].splice(1, 2);  // output: [1, 4] - the second param is optional
+
+- delete operator remove item from array without changing length:
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); // 5
+delete array[2];
+console.log(array); // [1, 2, undefined, 4, 5]
+console.log(array.length); // 5
+
+- using length to change array length:
+array = [1, 2, 3, 4, 5];
+array.length = 2;
+console.log(array); // [1, 2]
+
+- clean an array:
+arr = [];  // Side effect: it can make memory leak if we passed arr to func before remove it
+arr.length = 0;  // The best and shortest way to clean an array from memory
+let arrOld = arr.splice(0);  // Clean old arr and keep old data in a new name: arrOld
+
+- find min or max in an array:
+Math.min.apply(null, myArray);
+Math.max.apply(null, myArray);
+Math.max(...myArray);
+Math.min(...myArray);
+
+- The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array:
+for(const[index,element] of arr.entries()){
+console.log(index, element);
+}
+
+- Remove an item form an array:
+let arrNew = array.filter(function(val) { return val !== to_remove; });
+while(index = array.indexOf(3) !== -1) { array.splice(index, 1); }  // without copy
+
+- [].concat(...[1, 2, [3, 4]]);  // [1, 2, 3, 4]  // Flatterning arr
+[].concat.apply([], [1, 2, [3, 4]]);  // ES5
+deeplyNested.toString().split(',').map(Number);  // Works in deep nested arrays
+
+- arr.unshift(item, ...);  // Add item(s) to the beginning of an array
+- .some and .every allow a logical connective of Array values.
+- Array.isArray(obj);  // Return true is the obj is array
+- How to know an obj is an array
+var arr = [];
+Object.setPrototypeOf(arr, null);
+Array.isArray(arr);   // true
+arr instanceof Array; // false
+
+- array.sort((a,b) => a[1] - b[1]);  // Sort multi dimensional array
+- var newArr = arr.slice(0, 2); // newArr === ["a", "b"]
+- const clone = Object.assign({}, existing);  // Clone object
+- const { ...clone } = existing;  // Clone object
+
+- Object.freeze(obj); - Object.freeze makes an object immutable by preventing the addition of new properties, the removal of existing properties, and the modification of the enumerability, configurability, and writability of existing properties. It also prevents the value of existing properties from being changed. However, it does not work recursively which means that child objects are not automatically frozen and are subject to change.
+
 - 
+
+
+
+
+
+
 
 
 
