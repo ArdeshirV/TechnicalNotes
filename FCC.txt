@@ -3305,15 +3305,89 @@ arr instanceof Array; // false
 - var newArr = arr.slice(0, 2); // newArr === ["a", "b"]
 - const clone = Object.assign({}, existing);  // Clone object
 - const { ...clone } = existing;  // Clone object
+- var copy = JSON.parse(JSON.stringify(existing));  // Deep clone
+// Note that JSON.stringify will convert Date objects to ISO-format string representations, but JSON.parse will not convert the string back into a Date .
 
 - Object.freeze(obj); - Object.freeze makes an object immutable by preventing the addition of new properties, the removal of existing properties, and the modification of the enumerability, configurability, and writability of existing properties. It also prevents the value of existing properties from being changed. However, it does not work recursively which means that child objects are not automatically frozen and are subject to change.
 
+- Deep clone:
+ker.com – JavaScript® Notes for Professionals
+function deepClone(obj) {
+	function clone(obj, traversedObjects) {
+		var copy;
+		// primitive types
+		if(obj === null || typeof obj !== "object") {
+			return obj;
+		}
+		// detect cycles
+		for(var i = 0; i < traversedObjects.length; i++) {
+			if(traversedObjects[i] === obj) {
+				throw new Error("Cannot clone circular object.");
+			}
+		}
+		// dates
+		if(obj instanceof Date) {
+			copy = new Date();
+			copy.setTime(obj.getTime());
+			return copy;
+		}
+		// arrays
+		if(obj instanceof Array) {
+			copy = [];
+			for(var i = 0; i < obj.length; i++) {
+				copy.push(clone(obj[i], traversedObjects.concat(obj)));
+			}
+			return copy;
+		}
+		// simple objects
+		if(obj instanceof Object) {
+			copy = {};
+			for(var key in obj) {
+				if(obj.hasOwnProperty(key)) {
+					copy[key] = clone(obj[key], traversedObjects.concat(obj));
+				}
+			}
+			return copy;
+		}
+		throw new Error("Not a cloneable object.");
+	}
+	return clone(obj, []);
+}
+
+- Object.key(obj);  // Returns object keys
+- Use it to assign values to an existing object:
+	var user = { firstName: "John" };
+	Object.assign(user, {lastName: "Doe", age:39});
+	console.log(user); // Logs: {firstName: "John", lastName: "Doe", age: 39}
+- Note, only string wrappers can have own enumerable properties
+- Convert object to array:
+   return users.reduce((result, user) => Object.assign({}, {[user.id]: user})
+- Object spreading is just syntactic sugar for Object.assign({}, obj1, ..., objn);
+- Object.defineProperty()
+	var obj = { };
+	Object.defineProperty(obj, 'foo', { value: 'foo' });
+Object.defineProperty(obj, 'nameOfTheProperty', {
+	value: valueOfTheProperty,
+	writable: true, // if false, the property is read-only
+	configurable : true, // true means the property can be changed later
+	enumerable : true // true means property can be enumerated such as in a for..in loop
+});
+- get & set
+var person = { name: "John", surname: "Doe"};
+Object.defineProperty(person, 'fullName', {
+	get: function () {
+		return this.name + " " + this.surname;
+	},
+	set: function (value) {
+		[this.name, this.surname] = value.split(" ");
+	}
+});
+
+- Dynamic property name:
+var property="test";
+var obj = { [property]: 1 };  // Equals to: var obj = {}; obj[property] = 1;
+
 - 
-
-
-
-
-
 
 
 
