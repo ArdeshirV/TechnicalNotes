@@ -3415,12 +3415,56 @@ function getAllProperties(obj, props = []){
 	props.concat(Object.getOwnPropertyNames(obj)));
 }
 
+- Object.getOwnPropertyDescriptor(sampleObject, 'hello');
+// Object {value: "world", writable: true, enumerable: true, configurable: true}
+
+- Data descriptors - Required fields: value or writable or both Optional fields: configurable , enumerable Sample: { value: 10, writable: true; }
+writable, configurable, enumerable are TRUE by default
+- Accessor descriptors - Required fields: get or set or both Optional fields: configurable , enumerable Sample: { get: function () { return 10; }, enumerable: true }
+writable, configurable, enumerable are FALSE by default
+
+- Iterable Object:
+var myIterableObject = {};
+// An Iterable object must define a method located at the Symbol.iterator key:
+myIterableObject[Symbol.iterator] = function () {
+	// The iterator should return an Iterator object
+	return {
+		// The Iterator object must implement a method, next()
+		next: function () {
+			// next must itself return an IteratorResult object
+			if (!this.iterated) {
+				this.iterated = true;
+				// The IteratorResult object has two properties
+				return {
+					// whether the iteration is complete, and
+					done: false,
+					// the value of the current iteration
+					value: 'One'
+				};
+			}
+			return {
+			// When iteration is complete, just the done property is needed
+				done: true
+			};
+		},
+		iterated: false
+	};
+};
+
+- The proposed Object.entries() method returns an array of key/value pairs for the given object. It does not return an iterator like Array.prototype.entries() , but the Array returned by Object.entries() can be iterated:
+const obj = { one: 1, two: 2, three: 3 };
+Object.entries(obj);  // Results in: [ ["one", 1], ["two", 2], ["three", 3] ]
+It is an useful way of iterating over the key/value pairs of an object:
+for(const [key, value] of Object.entries(obj)) {
+	console.log(key); // "one", "two" and "three"
+	console.log(value); // 1, 2 and 3
+}
+
+- Object.values(); 
+var obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.values(obj)); // ['a', 'b', 'c']
+
 - 
-
-
-
-
-
 
 
 
