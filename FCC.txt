@@ -3464,7 +3464,9 @@ for(const [key, value] of Object.entries(obj)) {
 var obj = { 0: 'a', 1: 'b', 2: 'c' };
 console.log(Object.values(obj)); // ['a', 'b', 'c']
 
-- X
+- page 146
+
+
 
 
 
