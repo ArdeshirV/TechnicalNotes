@@ -1,7 +1,5 @@
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
-jQuery, Bootstrap --> Study about Examples,
-React --> Review
 
 learn.freecodecamp.org
 ________________________________________________________________________________
@@ -1317,7 +1315,7 @@ app.post('/name', (req, res) => {
 });
 _______________________________________
 
-MongoDB and Mondoose
+MongoDB and Mongoose
 
 - Connect to Mogo Mongoose:
 const uri = process.env.MONGO_URI;
@@ -3465,6 +3463,7 @@ var obj = { 0: 'a', 1: 'b', 2: 'c' };
 console.log(Object.values(obj)); // ['a', 'b', 'c']
 
 - page 146
+
 
 
 
