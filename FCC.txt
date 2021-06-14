@@ -38,7 +38,7 @@ lorem ipsum - This is a text place holder in HTML
 <div></div> - Divider
 <pre>text</pre> - Defines pre-formated text 
 <mark>text</mark> - Highlight text
-<strong></string> <b></b> - Strong defines important text but b is just bold
+<strong></strong> <b></b> - Strong defines important text but b is just bold
 <em></em> <i></i> - em Defines emphasised text but i is simply italic
 <abbr title="Hypertext Markup Language">HTML</abbr>
 <ins>text</ins> - Present text with underline that means the text is inserted
