@@ -1,3 +1,53 @@
+Currencies with low liquidity:
+    ftm 70-300 0.24
+  theta 70 0.5
+   mana 40-80 0.3
+    hot 50 0.3
+    zil 43-72 0.35
+  waves 36-60 0.38
+	enj 30-70 0.3
+    one 50-100 0.35
+	bnt 45 0.35
+   nexo 32 0.35
+   egld 31 0.3
+   btcp 30 0.5
+     sc 20-50 0.2
+ 	bak 9-800 0.2
+
+Technology Boom 2021:
+    xdc 32-218 0.4
+    cel 154 0.75
+    qnt 46 0.45
+    vet 25-125 0.3
+cardano 28-78 0.75
+	fil 63 0.3
+  sushi 44 0.3
+    bnb 45 0.43
+	chz 38 0.31
+    eth 32 0.5
+
+Above middle liquidity:
+   link 25 0.72
+	etc 26 0.3
+	xem 26 0.13
+    neo 21 0.27
+    ftx 20 0.3
+    dcr 20 0.5
+   AAVE 20 0.3
+    omg 20 30
+   nano 17 0.3
+    mkr 13-24 0.3
+
+Classic behavior:
+    ltc 14 0.35
+  matic 12 0.45
+    zec 6-12 0.35
+   iota 10
+   dash 10
+    zrx
+ monero 
+stellar 
+
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
 
@@ -3463,6 +3513,8 @@ var obj = { 0: 'a', 1: 'b', 2: 'c' };
 console.log(Object.values(obj)); // ['a', 'b', 'c']
 
 - page 146
+
+
 
 
 
