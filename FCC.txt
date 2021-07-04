@@ -50,6 +50,9 @@ Classic behavior:
  monero 
 stellar 
 
+Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose.
+Helen Keller
+
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
 
