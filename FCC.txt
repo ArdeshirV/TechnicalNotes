@@ -20,12 +20,13 @@ Technology Boom 2021:
     cel 154 0.75
     qnt 46 0.45
     vet 25-125 0.3
-cardano 28-78 0.75
+    ada 28-78 0.75
     fil 63 0.3
   sushi 44 0.3
     bnb 45-60 0.43
     chz 38 0.31
     eth 32 0.5
+    sol 40 0.57
 
 Above middle liquidity:
    link 25 0.72
@@ -38,6 +39,7 @@ Above middle liquidity:
     omg 20 30
    nano 17 0.3
     mkr 13-24 0.3
+   hbar 13-40 0.45
 
 Classic behavior:
     ltc 14 0.35
