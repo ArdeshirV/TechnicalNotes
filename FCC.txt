@@ -52,6 +52,13 @@ Classic behavior:
  monero 
 stellar 
 
+Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose.
+Helen Keller
+
+https://www.gq-magazine.co.uk/article/eva-green-sin-city-2-a-dame-to-kill-for-interview
+coercions
+
+
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
 
