@@ -3501,6 +3501,12 @@ _______________________________________________________________________________
 
 Researches about Cryptocurrencies and Trading:
 Currencies with low liquidity:
+    kin 100
+    BTT 50
+   dent 100
+    dcn 
+    mtl 30
+   aave 20
     ftm 60-300 0.24
   theta 70 0.5
    mana 40-80 0.3
