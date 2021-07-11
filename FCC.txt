@@ -1,6 +1,4 @@
-
-Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose.
-Helen Keller
+Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose. - Helen Keller
 
 1>Read Codes More. 2>Create Portfolio. 3>Do Your Job
 HTML -> Table, Canvas, Flex, 
@@ -3530,11 +3528,6 @@ var obj = { 0: 'a', 1: 'b', 2: 'c' };
 console.log(Object.values(obj)); // ['a', 'b', 'c']
 
 - page 146
-
-
-
-
-
 
 
 
