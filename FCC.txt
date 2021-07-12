@@ -4,6 +4,7 @@ Many persons have a wrong idea of what constitutes true happiness. It is not att
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, oop, await, async, libs, node
 
+
 learn.freecodecamp.org
 ________________________________________________________________________________
 
@@ -3528,6 +3529,7 @@ var obj = { 0: 'a', 1: 'b', 2: 'c' };
 console.log(Object.values(obj)); // ['a', 'b', 'c']
 
 - page 146
+
 
 
 
