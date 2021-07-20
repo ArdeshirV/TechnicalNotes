@@ -71,8 +71,8 @@ use rel="noopener noreferrer" with anchor to prevent using window.opener object 
 		I Roman Numerals (uppercase) I,II,III,IV
 Description list is name-value groups, where the name is given in the dt element, and the value is given in the dd element.
 <dl>
-	<dt>name 1</dt>       <-- name
-	<dd>value for 1</dd>  <-- description
+	<dt>name 1</dt>      <-- name
+	<dd>value for 1</dd> <-- description
 	<dt>name 2</dt><dd>value for 2</dd>
 </dl>
 Table cells can span multiple columns or rows using the colspan and rowspan attributes. These attributes can be applied to <th> and <td> elements.
@@ -83,7 +83,6 @@ The optional <colgroup> tag allows you to group columns together. <colgroup> ele
 		<col id="MySpecialColumn" />
 		<col />
 	</colgroup> ...
-
 Oldstyle data in HTML tags:
 <img src="sample.jpg" value="test" />
 You can use data filed in js code with setArrtibute and getAttribute
