@@ -82,7 +82,7 @@ The optional <colgroup> tag allows you to group columns together. <colgroup> ele
 	<colgroup>
 		<col id="MySpecialColumn" />
 		<col />
-	</colgroup> ...
+	</colgroup> 
 Oldstyle data in HTML tags:
 <img src="sample.jpg" value="test" />
 You can use data filed in js code with setArrtibute and getAttribute
