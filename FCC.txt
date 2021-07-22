@@ -75,6 +75,7 @@ Description list is name-value groups, where the name is given in the dt element
 	<dd>value for 1</dd> <-- description
 	<dt>name 2</dt><dd>value for 2</dd>
 </dl>
+
 Table cells can span multiple columns or rows using the colspan and rowspan attributes. These attributes can be applied to <th> and <td> elements.
 <thead>, <tbody>, <tfoot> rowspan="0" <-- Spread row to table width
 The optional <colgroup> tag allows you to group columns together. <colgroup> elements must be child elements of a <table> and must come after any <caption> elements and before any table content (e.g., <tr> , <thead> , <tbody> , etc.).
