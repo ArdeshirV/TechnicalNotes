@@ -1,5 +1,3 @@
-Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose. - Helen Keller
-
 1>Read Codes More. 2>Create Portfolio. 3>Do Your Job
 HTML -> Table, Canvas, Flex, 
 JavaScript -> Syntax, DOM, OOP, await, async, libs, node
@@ -1759,8 +1757,8 @@ _______________________________________________________________________________
 
 Researches about Cryptocurrencies and Trading:
 Currencies with low liquidity:
-    kin 100 0.08 5.7
-   dent 100 0.10 5.0
+**  kin 100 0.08 5.7
+** dent 100 0.10 5.0
   theta 70 0.25 2.5
    mana 40-80 0.3 2.4
     zil 43-72 0.25 2.45
